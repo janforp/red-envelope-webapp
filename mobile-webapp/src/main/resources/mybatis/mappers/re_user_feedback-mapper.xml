@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_user_feedback">
+    <resultMap id="BaseResultMap" type="com.iask.red_envelope.model.ReUserFeedback">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="user_id" property="userId" jdbcType="INTEGER"/>
+        <result column="user_contact" property="userContact" jdbcType="VARCHAR"/>
+        <result column="feedback_detail" property="feedbackDetail" jdbcType="VARCHAR"/>
+        <result column="feedback_img" property="feedbackImg" jdbcType="VARCHAR"/>
+        <result column="feedback_time" property="feedbackTime" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="SELECT_All_Column">
+        SELECT id, user_id, user_contact, feedback_detail, feedback_img, 
+        feedback_time
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.iask.red_envelope.model.ReUserFeedback">
+        <include refid="re_user_feedback.SELECT_All_Column"/>
+        FROM re_user_feedback
+        WHERE id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="com.iask.red_envelope.model.ReUserFeedback">
+        DELETE FROM re_user_feedback
+        WHERE id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.iask.red_envelope.model.ReUserFeedback">
+        INSERT INTO re_user_feedback ( user_id, 
+          user_contact, feedback_detail, feedback_img, 
+          feedback_time )
+        VALUES ( #{userId,jdbcType=INTEGER}, 
+          #{userContact,jdbcType=VARCHAR}, #{feedbackDetail,jdbcType=VARCHAR}, #{feedbackImg,jdbcType=VARCHAR}, 
+          #{feedbackTime,jdbcType=VARCHAR} )
+        <selectKey keyProperty="id" resultType="long">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+    </insert>
+    <insert id="insertSelective" parameterType="com.iask.red_envelope.model.ReUserFeedback">
+        INSERT INTO re_user_feedback
+        <trim prefix="(" suffixOverrides="," suffix=")">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="userContact != null">
+                user_contact,
+            </if>
+            <if test="feedbackDetail != null">
+                feedback_detail,
+            </if>
+            <if test="feedbackImg != null">
+                feedback_img,
+            </if>
+            <if test="feedbackTime != null">
+                feedback_time,
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffixOverrides="," suffix=")">
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="userContact != null">
+                #{userContact,jdbcType=VARCHAR},
+            </if>
+            <if test="feedbackDetail != null">
+                #{feedbackDetail,jdbcType=VARCHAR},
+            </if>
+            <if test="feedbackImg != null">
+                #{feedbackImg,jdbcType=VARCHAR},
+            </if>
+            <if test="feedbackTime != null">
+                #{feedbackTime,jdbcType=VARCHAR},
+            </if>
+        </trim>
+        <selectKey keyProperty="id" resultType="long">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+    </insert>
+    <insert id="insertBatch" parameterType="java.util.List">
+        INSERT INTO re_user_feedback ( user_id, 
+          user_contact, feedback_detail, feedback_img, 
+          feedback_time )
+        VALUES
+        <foreach collection="list" item="item" index="index" separator="," >
+            (
+            #{item.userId,jdbcType=INTEGER}, 
+            #{item.userContact,jdbcType=VARCHAR}, #{item.feedbackDetail,jdbcType=VARCHAR}, #{item.feedbackImg,jdbcType=VARCHAR}, 
+            #{item.feedbackTime,jdbcType=VARCHAR}
+            )
+        </foreach>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.iask.red_envelope.model.ReUserFeedback">
+        UPDATE re_user_feedback
+        <set>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="userContact != null">
+                user_contact = #{userContact,jdbcType=VARCHAR},
+            </if>
+            <if test="feedbackDetail != null">
+                feedback_detail = #{feedbackDetail,jdbcType=VARCHAR},
+            </if>
+            <if test="feedbackImg != null">
+                feedback_img = #{feedbackImg,jdbcType=VARCHAR},
+            </if>
+            <if test="feedbackTime != null">
+                feedback_time = #{feedbackTime,jdbcType=VARCHAR},
+            </if>
+        </set>
+        WHERE id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.iask.red_envelope.model.ReUserFeedback">
+        UPDATE re_user_feedback
+        SET user_id = #{userId,jdbcType=INTEGER},
+            user_contact = #{userContact,jdbcType=VARCHAR},
+            feedback_detail = #{feedbackDetail,jdbcType=VARCHAR},
+            feedback_img = #{feedbackImg,jdbcType=VARCHAR},
+            feedback_time = #{feedbackTime,jdbcType=VARCHAR}
+        WHERE id = #{id,jdbcType=BIGINT}
+    </update>
+</mapper>

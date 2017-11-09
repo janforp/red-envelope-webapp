@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_code_red_detail">
+
+    <select id="getRandomOneCodeRedLock" resultMap="BaseResultMap" parameterType="INTEGER">
+        <include refid="re_code_red_detail.SELECT_All_Column"/>
+        FROM re_code_red_detail
+        WHERE code_id = #{codeId,jdbcType=BIGINT}
+        ORDER BY rand()
+        Limit 1 FOR UPDATE
+    </select>
+
+</mapper>

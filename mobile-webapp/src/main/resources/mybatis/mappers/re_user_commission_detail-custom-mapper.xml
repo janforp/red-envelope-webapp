@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_user_commission_detail">
+
+    <select id="getCommissionList" parameterType="Integer" resultMap="BaseResultMap">
+        <include refid="re_user_commission_detail.SELECT_All_Column"/>
+        FROM re_user_commission_detail
+        WHERE user_id = #{userId,jdbcType=INTEGER}
+        ORDER BY detail_time DESC
+    </select>
+
+    <select id="getCommissionNumByUserId" resultType="int" parameterType="Integer">
+        SELECT COUNT(*)
+        FROM re_user_commission_detail
+        WHERE user_id = #{userId,jdbcType=INTEGER}
+    </select>
+
+</mapper>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+
+    <script src="/plugins/jquery/jquery-all.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/plugins/weui-1.0.2/css/weui.min.css">
+    <script src="/plugins/weui-1.0.2/js/weui.js"></script>
+
+
+    <style>
+        .page, body {
+            background-color: #f8f8f8;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div id="container">
+    <div class="check">
+        <form>
+            <div class="weui-cells__title">请选择投诉的原因</div>
+            <div class="weui-cells weui-cells_radio" id="weui-cells_tag">
+                <!--<label class="weui-cell weui-check__label" for="x11">-->
+                    <!--<div class="weui-cell__bd">-->
+                        <!--<p>cell standard</p>-->
+                    <!--</div>-->
+                    <!--<div class="weui-cell__ft">-->
+                        <!--<input type="radio" class="weui-check" name="radio1" id="x11">-->
+                        <!--<span class="weui-icon-checked"></span>-->
+                    <!--</div>-->
+                <!--</label>-->
+            </div>
+            <div class="weui-btn-area">
+                <a class="weui-btn weui-btn_primary weui-btn_disabled" href="javascript:" id="nextStep">下一步</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+
+
+<script>
+    $(function () {
+
+
+        //页面布局
+        var cellNames = ["欺诈","色情","政治谣言","常识性谣言","诱导分享","恶意营销","隐私信息收集","抄袭公众号文章","其他侵权类（冒名、诽谤、抄袭）","违规声明原创"];
+        for (var i = 0;i<10;i++){
+            var xNumber = i + 1;
+            var cell = '<label class="weui-cell weui-check__label" for="x'+xNumber+'">'  +
+                '<div class="weui-cell__bd"> <p>'+cellNames[i]+'</p> </div>' +
+                ' <div class="weui-cell__ft"> <input type="radio" class="weui-check" name="radio1" id="x'+xNumber+'">'  +
+                '<span class="weui-icon-checked"></span> </div> </label>'
+            $("#weui-cells_tag").append(cell);
+        }
+
+        $(".weui-check__label").click(function(){
+
+            var div = document.getElementById('nextStep');
+            div.setAttribute("class", "weui-btn weui-btn_primary");
+        });
+
+        $("#nextStep").click(function () {
+            window.location.href = "complainText.html";
+        });
+
+    })
+
+</script>
+
+<div id="global-toast" style="display: none;">
+    <div class="weui-mask_transparent"></div>
+    <div class="weui-toast">
+        <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+        <p class="weui-toast__content">&nbsp;</p>
+    </div>
+</div>
+
+<div id="global-toast-loading" style="display: none;">
+    <div class="weui-mask_transparent"></div>
+    <div class="weui-toast">
+        <i class="weui-loading weui-icon_toast"></i>
+        <p class="weui-toast__content">&nbsp;</p>
+    </div>
+</div>
+
+<div id="global-dialog-confirm" style="display: none;">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog">
+        <div class="weui-dialog__hd"><strong class="weui-dialog__title">&nbsp;</strong></div>
+        <div class="weui-dialog__bd">&nbsp;</div>
+        <div class="weui-dialog__ft">
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">取消</a>
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确定</a>
+        </div>
+    </div>
+</div>
+
+<div id="global-dialog-alert" style="display: none;">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog">
+        <div class="weui-dialog__hd"><strong class="weui-dialog__title">&nbsp;</strong></div>
+        <div class="weui-dialog__bd">&nbsp;</div>
+        <div class="weui-dialog__ft">
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确定</a>
+        </div>
+    </div>
+</div>
+
+</body>
+
+
+</html>

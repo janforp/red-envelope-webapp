@@ -1,0 +1,36 @@
+<!--需审核任务详情页面-->
+<head>
+    <title>招财猫</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="/plugins/jquery/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/plugins/ios-jsBridge/ios-jsBridge.js"></script>
+    <script>
+        function download() {
+            //调用app代码。传回sign
+            var timestamp = Date.parse(new Date());
+            var map = {
+                't':timestamp
+            };
+            var str = JSON.stringify(map);
+
+            if(userSign.getSign(str)){
+
+
+            }else{
+                window.location.href = url;
+            }
+        }
+    </script>
+
+</head>
+<body>
+<div class="content"><!--content start-->
+    <a href="javaScript:download();">下载招财猫</a>
+</div><!--content over-->
+</body>
+</html>

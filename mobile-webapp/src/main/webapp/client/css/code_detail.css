@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 62.5%;
+    background-color: #FA494B;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+.content{
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 414px;
+    background-color: #A0C5E8;
+}
+.headImgDiv {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+}
+.headImgDiv img {
+    max-width: 100px;
+    height: auto;
+}
+.topImg {
+    text-align: center;
+    padding:0;
+    margin: 0;
+}
+.backgroundImg {
+    border-top: 2px solid #FFFFFF;
+    width: 100%;
+    margin: 0;
+}
+
+.maxMoney{
+    font-size: 2.5rem;
+    color: red;
+}
+.yuan{
+    font-size: 1rem;
+    color: red;
+    position: relative;
+    bottom:5px;
+}
+.maxDiv{
+    width: 100%;
+    float: left;
+    position: relative;
+    bottom:3.5rem;
+    text-align: center;
+}
+.words {
+    padding: 2rem 0.5rem 2rem 1rem;
+    background-color: #FB4E50;
+    width: 100%;
+}
+.words span{
+    display: inline-block;
+    margin-top: 0.6rem;
+    letter-spacing: 1px;
+}
+.copyCodeDiv{
+    text-align: center;
+    width: 100%;
+    background-color: #FB4E50;
+    padding-bottom: 3rem;
+    margin-bottom: 50px;
+
+}
+.copyDesc{
+    display: block;
+    margin-bottom: 0.2rem;
+}
+.code{
+    color: white;
+    font-size: 2rem;
+}
+.dashBorder{
+    margin-left: 5%;
+    margin-right: 5%;
+    border: 1px dashed;
+    padding: 1rem 0.5rem;
+}
+
+
+
+/*去抢红包按钮*/
+.grabRedButton{
+
+    width: 100%;
+    height: 60px;
+    background-color: #FB4E50;
+    text-align: center;
+    padding-bottom: 1rem;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 414px;
+}
+
+.canNotGrabRedButton{
+    width: 100%;
+    text-align: center;
+    height: 60px;
+    padding-bottom: 1rem;
+    background-color: #FB4E50;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 414px;
+}
+
+.canNotGrabRedButton button{
+
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    height: 40px;
+    background-color:#d1d1d1 ;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    color:white ;
+    font-weight: 200;
+    outline: none;
+}
+
+.grabRedButton button{
+
+    margin : 10px 5%;
+    width: 90%;
+    height: 40px;
+    background-color:#FAD512 ;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    color:#FB4E50 ;
+    font-weight: 200;
+    outline: none;
+}

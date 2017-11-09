@@ -1,0 +1,200 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    font-size: 62.5%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.content{
+    width: 100%;
+    margin:0 auto;
+    max-width: 414px;
+}
+
+.header{
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    border-bottom: 2px solid #efefef;
+}
+
+.img{
+    width: 50px;
+    height:50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header img{
+    display: block;
+    width: 100%;
+}
+
+.title-size {
+    height: 50px;
+    width: 100%;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+}
+.title-size span {
+    display: block;
+    font-size: 0.9rem;
+}
+.title-size span:nth-child(2){
+    color: #969696;
+}
+
+.reward {
+    height: 50px;
+    width: 70px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+
+}
+.reward span {
+    display: block;
+}
+.reward span:nth-child(1){
+    font-size: 0.9rem;
+    color:#3c3c3c;
+}
+.reward span:nth-child(2){
+    color:#f96301;
+    font-size: 1rem;
+}
+
+
+.labelDiv{
+    width: 100%;
+    padding: 0.5rem;
+}
+.label{
+    display: inline-block;
+    border: 1px solid #3ccaff;
+    color: #3ccaff;
+    margin-right: 4px;
+    border-radius: 3px;
+    padding: 3px 5px;
+    font-size: 0.4rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.title{
+    padding: 0.5rem;
+    border-bottom:1px solid #EFEFEF;
+    font-size: 1rem;
+    color: #3c3c3c;
+    display: flex;
+    justify-content: space-between;
+}
+.title span{
+    display: inline-block;
+}
+
+.appImgDiv{
+    width: 100%;
+    padding: 0.5rem 1rem;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.appImgDiv img{
+
+    width:45%;
+    height: auto;
+    display: inline-block;
+}
+.introduceDiv{
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: #717171;
+    letter-spacing: 0.5px;
+}
+.stepDiv{
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: flex-start;
+}
+.left{
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.circle{
+    width: 10px;
+    height:10px;
+    border-radius: 50%;
+
+    background-color: red;
+}
+.red{
+    background-color: #f96301;
+    border:2px solid #F19A6E;
+}
+.line{
+    width: 1px;
+    height: 100px;
+    background-color: #D8D8D8;
+}
+.grey{
+    background-color: #D8D8D8;
+}
+
+.right{
+    width: 100%;
+    margin-right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    font-size: 1rem;
+}
+.right span{
+    display: inline-block;
+}
+.stepOne{
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+.stepTwo{
+    letter-spacing: 1px;
+    color: #969696;
+    font-weight: 300;
+
+}
+
+.stepOneDesc{
+    font-size: 0.8rem;
+    color: #F96301;
+
+    margin-top: 5px;
+    margin-left: 1rem;
+    line-height: 1rem;
+}
+.moneyTips{
+    color: #f96301;
+}

@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>一元夺宝</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+
+    <style>
+        img{
+            width: 100%;
+        }
+        #btnImg{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+
+    <script type="text/javascript" src="/plugins/jquery/jquery-1.9.1.min.js"></script>
+    <script>
+        var isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        /**
+         *
+         * @param downloadUrl   apk下载链接
+         * @param packageName   包名
+         * @param appName       app名
+         */
+        function download(downloadUrl, appName) {
+            if (navigator.userAgent.indexOf('hongbao') < 0){ // 非app上
+                window.location.href = downloadUrl;
+            }else{ // app上
+                if(isIos){//苹果
+                    window.location.href='';
+                }else {//安卓
+                    //安装方法跳转到下载地址或者跳转到
+                    userSign.downloadAPK(appName, downloadUrl, 1);
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <img src="/client/img/yiyuanduobao/1.png">
+    <div style="padding-top: 80px;">
+        <a href="javaScript:download('http://image.lswuyou.cn/apk/yiyuanduobao.apk', '一元夺宝');"><img src="/client/img/yiyuanduobao/2.png" id="btnImg"></a>
+    </div>
+</body>
+</html>

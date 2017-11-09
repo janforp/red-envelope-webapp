@@ -1,0 +1,53 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 62.5%;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+.content{
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    max-width: 414px;
+    position: relative;
+}
+
+.headerImg img {
+    width: 100%;
+}
+
+.textContainer {
+
+    padding: 1rem 1rem;
+}
+
+.textContainer span {
+
+    display: block;
+}
+
+.oneExtend {
+
+    /*padding-top: 1rem;*/
+    padding-bottom: 1rem;
+}
+
+.blackTitle {
+
+    color:#040404 ;
+    font-size: 1.4rem;
+    padding-bottom: 0.2rem;
+}
+
+.extendContactMethod {
+
+    color: #898989;
+    font-size: 1rem;
+    padding-bottom: 0.2rem;
+}

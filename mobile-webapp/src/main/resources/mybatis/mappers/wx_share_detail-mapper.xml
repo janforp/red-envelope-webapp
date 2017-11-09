@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="wx_share_detail">
+    <resultMap id="BaseResultMap" type="com.iask.red_envelope.model.WxShareDetail">
+        <id column="detail_id" property="detailId" jdbcType="BIGINT"/>
+        <result column="user_id" property="userId" jdbcType="BIGINT"/>
+        <result column="mission_id" property="missionId" jdbcType="BIGINT"/>
+        <result column="money" property="money" jdbcType="DECIMAL"/>
+        <result column="detail_time" property="detailTime" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="SELECT_All_Column">
+        SELECT detail_id, user_id, mission_id, money, detail_time
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.iask.red_envelope.model.WxShareDetail">
+        <include refid="wx_share_detail.SELECT_All_Column"/>
+        FROM wx_share_detail
+        WHERE detail_id = #{detailId,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="com.iask.red_envelope.model.WxShareDetail">
+        DELETE FROM wx_share_detail
+        WHERE detail_id = #{detailId,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.iask.red_envelope.model.WxShareDetail">
+        INSERT INTO wx_share_detail ( user_id, 
+          mission_id, money, detail_time )
+        VALUES ( #{userId,jdbcType=BIGINT}, 
+          #{missionId,jdbcType=BIGINT}, #{money,jdbcType=DECIMAL}, #{detailTime,jdbcType=VARCHAR} )
+        <selectKey keyProperty="detailId" resultType="long">
+            SELECT LAST_INSERT_ID() AS detailId
+        </selectKey>
+    </insert>
+    <insert id="insertSelective" parameterType="com.iask.red_envelope.model.WxShareDetail">
+        INSERT INTO wx_share_detail
+        <trim prefix="(" suffixOverrides="," suffix=")">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="missionId != null">
+                mission_id,
+            </if>
+            <if test="money != null">
+                money,
+            </if>
+            <if test="detailTime != null">
+                detail_time,
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffixOverrides="," suffix=")">
+            <if test="userId != null">
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="missionId != null">
+                #{missionId,jdbcType=BIGINT},
+            </if>
+            <if test="money != null">
+                #{money,jdbcType=DECIMAL},
+            </if>
+            <if test="detailTime != null">
+                #{detailTime,jdbcType=VARCHAR},
+            </if>
+        </trim>
+        <selectKey keyProperty="detailId" resultType="long">
+            SELECT LAST_INSERT_ID() AS detailId
+        </selectKey>
+    </insert>
+    <insert id="insertBatch" parameterType="java.util.List">
+        INSERT INTO wx_share_detail ( user_id, 
+          mission_id, money, detail_time )
+        VALUES
+        <foreach collection="list" item="item" index="index" separator="," >
+            (
+            #{item.userId,jdbcType=BIGINT}, 
+            #{item.missionId,jdbcType=BIGINT}, #{item.money,jdbcType=DECIMAL}, #{item.detailTime,jdbcType=VARCHAR}
+            )
+        </foreach>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.iask.red_envelope.model.WxShareDetail">
+        UPDATE wx_share_detail
+        <set>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="missionId != null">
+                mission_id = #{missionId,jdbcType=BIGINT},
+            </if>
+            <if test="money != null">
+                money = #{money,jdbcType=DECIMAL},
+            </if>
+            <if test="detailTime != null">
+                detail_time = #{detailTime,jdbcType=VARCHAR},
+            </if>
+        </set>
+        WHERE detail_id = #{detailId,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.iask.red_envelope.model.WxShareDetail">
+        UPDATE wx_share_detail
+        SET user_id = #{userId,jdbcType=BIGINT},
+            mission_id = #{missionId,jdbcType=BIGINT},
+            money = #{money,jdbcType=DECIMAL},
+            detail_time = #{detailTime,jdbcType=VARCHAR}
+        WHERE detail_id = #{detailId,jdbcType=BIGINT}
+    </update>
+</mapper>

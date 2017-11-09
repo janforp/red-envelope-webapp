@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    font-size: 62.5%;
+}
+a {
+    display:inline-block;
+    text-decoration: none;
+    width: 100%;
+}
+
+.content{
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 414px;
+    position: relative;
+}
+
+.main {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.sign{
+    margin-top: 2rem;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+}
+
+.sign a{
+    display:inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 1.0rem;
+    line-height: 2.8rem;
+    width: 7rem;
+    height: 2.8rem;
+    margin-top: 0.5rem;
+    background-color: #FF4850;
+    border-radius: 5px;
+}
+
+.sign span {
+    display:inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 1.0rem;
+    line-height: 2.8rem;
+    width: 7rem;
+    height: 2.8rem;
+    margin-top: 0.5rem;
+    background-color: #C3C3C3;
+    border-radius: 5px;
+}
+
+.line_top_1 {
+    margin: 1rem -1rem 0 -1rem;
+    border-top: 1px solid #EFEFEF;
+}
+
+.line_top_2 {
+    margin: 2rem -1rem 0 -1rem;
+    border-top: 1px solid #EFEFEF;
+}
+
+.ball{
+    margin-top: 3rem;
+    height: 4rem;
+}
+
+.date0{
+    float: left;
+    margin: 0;
+    width: 12%;
+    height: 0;
+    padding-top: 11.5%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.date0 .num {
+    display:inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: -77%;
+}
+
+.date0 .text {
+    display:inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 20%;
+}
+
+.date1{
+    float: left;
+    margin-left: 2.5%;
+    width: 12%;
+    height: 0;
+    padding-top: 11.5%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.date1 .num {
+    display:inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: -77%;
+}
+
+.date1 .text {
+    display:inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 20%;
+}

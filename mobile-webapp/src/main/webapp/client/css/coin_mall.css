@@ -1,0 +1,352 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    font-size: 62.5%;
+}
+.content{
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 414px;
+    position: relative;
+}
+/*
+    请签到<a>开始
+*/
+.plzLogin{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+}
+.plzLogin a{
+    display:inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 1.0rem;
+    line-height: 2rem;
+    width: 7rem;
+    height: 2rem;
+    /*margin-top: 0.5rem;*/
+    background-color: #ff7e2a;
+    border-radius: 5px;
+}
+
+.headDiv {
+    width: 100%;
+    overflow: auto;
+    padding: 1rem 1.5rem 1rem 1rem;
+}
+.iconDiv{
+    width:20%;
+    float: left;
+}
+.headImg {
+    width: 50px;height: 50px;border-radius: 100%;
+ }
+.nameAndSignCountDiv{
+    padding-top: 0.5rem;
+    width:50%;
+    float: left;
+}
+
+.signButtonDiv{
+    width:30%;
+    float: left;
+    text-align: center;
+}
+
+.name {
+    display: block;
+    font-size: 0.8rem;
+}
+.name span {
+    /*line-height: 50px;*/
+    font-size: 1rem;
+    padding: 1rem 0rem;
+}
+
+.signCount {
+    width: 100%;
+    overflow: auto;
+    font-size: 0.8rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+}
+.signDiv {
+    width: 50%;
+    float:left;
+    text-align: center;
+    padding-top: 0.5rem;
+}
+
+#sign {
+    display:inline-block;
+    width: 100px;
+    height: 30px;
+    border-radius: 2px;
+    border: 1px solid #3ccaff;
+
+}
+
+#sign span {
+    color: #3ccaff;
+    font-size:1rem;
+    line-height: 30px;
+    letter-spacing: 3px;
+}
+#signed{
+    background-color: #D9D9D9;
+    display:inline-block;
+    width: 100px;
+    height: 30px;
+    border-radius: 2px;
+}
+#signed span {
+    color: white;
+    font-size:1rem;
+    line-height: 30px;
+    letter-spacing: 3px;
+}
+
+/*显示金币及余额的div*/
+.coinAndMoney {
+   width: 100%;height: 30px;text-align: center
+}
+/*金币*/
+.coin {
+    float: left;width: 50%;border-top: 1px solid #EFEFEF;
+}
+.coinSpan {
+    display: block;line-height: 30px;color: #EDB797;font-size: 1rem
+}
+
+.coinSpan span {
+    color:#C2C1C2;position: relative;bottom: 1px;
+}
+/*余额*/
+.money{
+    float: left;width: 50%;text-align: center;border-top: 1px solid #EFEFEF;border-left: 1px solid #EFEFEF;
+}
+.moneySpan {
+    display: block;line-height: 30px;color: #EDB797;font-size: 1rem
+}
+
+.moneySpan span {
+    color:#C2C1C2;position: relative;bottom: 1px;
+}
+/*
+    已签到<a>开始
+*/
+.signed {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+}
+
+.signed a{
+    display:inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 1.0rem;
+    line-height: 2rem;
+    width: 7rem;
+    height: 2rem;
+    /*margin-top: 0.5rem;*/
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    /*让已签到按钮上下居中*/
+    position: relative;
+    bottom: 0.5rem;
+    left: 1rem;
+}
+
+/*
+    已签到<a>结束
+*/
+
+
+/*
+    签到<a>开始
+*/
+.sign{
+    margin-top: 1rem;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+}
+
+.sign a{
+    display:inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 1.0rem;
+    line-height: 2rem;
+    width: 7rem;
+    height: 2rem;
+    /*margin-top: 0.5rem;*/
+    background-color: #ff7e2a;
+    border-radius: 5px;
+    /*让签到按钮上下居中*/
+    position: relative;
+    bottom: 0.5rem;
+}
+/*
+    签到<a>结束
+*/
+
+/*取消a下面的横线*/
+a{
+    text-decoration: none;
+}
+
+html,body{overflow-x:hidden;}
+
+
+
+/*登录/签到按钮下的分割线*/
+.separateLine1 {
+
+    width: 100%;
+    height: 20px;
+    background-color: #F0F0F0;
+    text-align: center;
+}
+.separateLine {
+
+    width: 100%;
+    height: 30px;
+    background-color: #F0F0F0;
+    text-align: center;
+}
+
+.separateLine span {
+    line-height: 30px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+/*其他活动:如兑换码红包,幸运转盘*/
+.otherActivitiesDiv{
+    width: 100%;height: 70px;
+}
+.activities{
+    float:left;
+    width:25%;
+    height: 70px;
+    border-right: 1px solid #efefef;
+    text-align: center;
+}
+.activities img {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 30px;
+    height: 30px;
+}
+.activities span{
+    color: darkorange;
+    display: block;
+    font-size: 0.8rem;
+}
+
+/*商品列表 start*/
+
+/*横排div*/
+.goodsDiv {
+    overflow: auto;
+}
+/*左边商品*/
+.goods1 {
+    float: left;
+    width: 50%;
+    border-bottom: 1px solid #EFEFEF;
+    text-align: center;
+    padding: 1rem;
+}
+/**/
+.nameAndCoin {
+    text-align: left
+}
+
+.goods1A {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(255,0,0,0)
+}
+.goods2A {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(255,0,0,0)
+}
+/*金币图标*/
+.coinIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+/*商品价格span*/
+.priceSpan {
+    color:red;
+    position: relative;
+    bottom: 5px;
+    font-size: 15px;
+}
+.goods1Name {
+    color: black;
+    font-size: 0.8rem;
+}
+/*左边商品的图片*/
+.goods1Icon {
+    height: 100px;
+    width:100px;
+}
+/*右边商品*/
+.goods2 {
+    float: left;
+    width: 50%;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #EFEFEF;
+    border-left:1px solid #EFEFEF;
+}
+
+.goods2Name {
+    color: black;
+    font-size: 1rem;
+}
+
+/*商品列表 end*/
+
+
+/*所有权div*/
+.rightDiv {
+    background-color: #EFEFEF;
+    width: 100%;
+    height:auto;
+    float: left;
+    text-align: center;
+    margin-top: 1rem;
+}
+.rightDiv span:nth-child(1) {
+    font-size: 0.8rem;display: block;margin-bottom: 0.4rem;padding-top: 1rem
+}
+.rightDiv span:nth-child(2) {
+    font-size: 0.8rem;display: block;margin-bottom: 0.4rem;
+}
+.rightDiv span:nth-child(3) {
+    font-size: 0.8rem;display: block;margin-bottom: 0.4rem;padding-bottom:1rem;
+}

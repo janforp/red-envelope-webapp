@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_score_detail">
+    <select id="getScoreList" resultMap="BaseResultMap" parameterType="int">
+        <include refid="re_score_detail.SELECT_All_Column"/>
+        FROM re_score_detail
+        WHERE user_id = #{userId,jdbcType=INTEGER}
+        ORDER BY score_time DESC
+    </select>
+
+    <select id="getTotalNum" resultType="int" parameterType="int">
+        SELECT  COUNT(*)
+        FROM    re_score_detail
+        WHERE user_id = #{userId,jdbcType=INTEGER}
+    </select>
+
+    <select id="getTotalScore" resultType="int" parameterType="int">
+        SELECT  SUM(score)
+        FROM    re_score_detail
+        WHERE   user_id = #{userId,jdbcType=INTEGER}
+        AND  score_type = 1
+    </select>
+
+    <select id="getScoreByDay" resultType="int" parameterType="map">
+        SELECT  SUM(score)
+        FROM    re_score_detail
+        WHERE   user_id = #{userId,jdbcType=INTEGER}
+        AND     instr(score_time, #{dayTime,jdbcType=VARCHAR})
+        AND  score_type = 1
+    </select>
+</mapper>

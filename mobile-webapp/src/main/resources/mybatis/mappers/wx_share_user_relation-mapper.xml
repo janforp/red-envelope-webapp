@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="wx_share_user_relation">
+    <resultMap id="BaseResultMap" type="com.iask.red_envelope.model.WxShareUserRelation">
+        <id column="user_id" property="userId" jdbcType="BIGINT"/>
+        <id column="mission_id" property="missionId" jdbcType="BIGINT"/>
+        <result column="prize_times" property="prizeTimes" jdbcType="TINYINT"/>
+        <result column="lottery_times" property="lotteryTimes" jdbcType="TINYINT"/>
+        <result column="update_time" property="updateTime" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="SELECT_All_Column">
+        SELECT user_id, mission_id, prize_times, lottery_times, update_time, 
+        create_time
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.iask.red_envelope.model.WxShareUserRelation">
+        <include refid="wx_share_user_relation.SELECT_All_Column"/>
+        FROM wx_share_user_relation
+        WHERE user_id = #{userId,jdbcType=BIGINT}
+        AND mission_id = #{missionId,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="com.iask.red_envelope.model.WxShareUserRelation">
+        DELETE FROM wx_share_user_relation
+        WHERE user_id = #{userId,jdbcType=BIGINT}
+        AND mission_id = #{missionId,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.iask.red_envelope.model.WxShareUserRelation">
+        INSERT INTO wx_share_user_relation ( user_id, 
+          mission_id, prize_times, lottery_times, 
+          update_time, create_time )
+        VALUES ( #{userId,jdbcType=BIGINT}, 
+          #{missionId,jdbcType=BIGINT}, #{prizeTimes,jdbcType=TINYINT}, #{lotteryTimes,jdbcType=TINYINT}, 
+          #{updateTime,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR} )
+    </insert>
+    <insert id="insertSelective" parameterType="com.iask.red_envelope.model.WxShareUserRelation">
+        INSERT INTO wx_share_user_relation
+        <trim prefix="(" suffixOverrides="," suffix=")">
+                user_id,
+                mission_id,
+            <if test="prizeTimes != null">
+                prize_times,
+            </if>
+            <if test="lotteryTimes != null">
+                lottery_times,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffixOverrides="," suffix=")">
+                #{userId,jdbcType=BIGINT},
+                #{missionId,jdbcType=BIGINT},
+            <if test="prizeTimes != null">
+                #{prizeTimes,jdbcType=TINYINT},
+            </if>
+            <if test="lotteryTimes != null">
+                #{lotteryTimes,jdbcType=TINYINT},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <insert id="insertBatch" parameterType="java.util.List">
+        INSERT INTO wx_share_user_relation ( user_id, 
+          mission_id, prize_times, lottery_times, 
+          update_time, create_time )
+        VALUES
+        <foreach collection="list" item="item" index="index" separator="," >
+            (
+            #{item.userId,jdbcType=BIGINT}, 
+            #{item.missionId,jdbcType=BIGINT}, #{item.prizeTimes,jdbcType=TINYINT}, #{item.lotteryTimes,jdbcType=TINYINT}, 
+            #{item.updateTime,jdbcType=VARCHAR}, #{item.createTime,jdbcType=VARCHAR}
+            )
+        </foreach>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.iask.red_envelope.model.WxShareUserRelation">
+        UPDATE wx_share_user_relation
+        <set>
+            <if test="prizeTimes != null">
+                prize_times = #{prizeTimes,jdbcType=TINYINT},
+            </if>
+            <if test="lotteryTimes != null">
+                lottery_times = #{lotteryTimes,jdbcType=TINYINT},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=VARCHAR},
+            </if>
+        </set>
+        WHERE user_id = #{userId,jdbcType=BIGINT}
+        AND mission_id = #{missionId,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.iask.red_envelope.model.WxShareUserRelation">
+        UPDATE wx_share_user_relation
+        SET prize_times = #{prizeTimes,jdbcType=TINYINT},
+            lottery_times = #{lotteryTimes,jdbcType=TINYINT},
+            update_time = #{updateTime,jdbcType=VARCHAR},
+            create_time = #{createTime,jdbcType=VARCHAR}
+        WHERE user_id = #{userId,jdbcType=BIGINT}
+        AND mission_id = #{missionId,jdbcType=BIGINT}
+    </update>
+</mapper>

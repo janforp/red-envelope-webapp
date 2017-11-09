@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_share_mission_detail">
+
+    <select id="selectClickTimesByUserIdAndMissionId" parameterType="map" resultType="int">
+        SELECT COUNT(*)
+        FROM re_share_mission_detail
+        WHERE mission_id = #{missionId,jdbcType=BIGINT}
+        AND user_id = #{userId,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectPartInNum" resultType="int" parameterType="long">
+        SELECT COUNT(DISTINCT mission_id,user_id)
+        FROM re_share_mission_detail
+        WHERE mission_id = #{dbcType=BIGINT}
+    </select>
+
+</mapper>

@@ -1,0 +1,109 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    font-size: 62.5%;
+    background-color: #F0F0F0;
+}
+
+.content{
+
+    width: 100%;
+    height: auto;
+    background-color: #F0F0F0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 414px;
+    text-align: center;
+}
+
+.codeInput {
+
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+.codeInput img {
+    width: 100px;height: 100px;margin-bottom: 1rem;
+}
+.codeInput input{
+
+    background-color: #FFFFFF;
+    width: 230px;
+    text-align: center;
+    height: 2.5rem;
+    border-radius: 1px;
+    border:none;
+    font-size: 1.2rem;
+}
+.inputSpan {
+    display: block;margin-bottom: 2rem;font-size: 1.5rem;color: #8E8E8E
+}
+
+button{
+    width: 230px;
+    background-color: #D9D9D9;
+    height:2.5rem;
+    border-radius: 2px;
+    border:none;
+}
+.buttonSpan {
+    font-size: 1.5rem;line-height: 2rem;color: white
+}
+
+#alert{
+
+    background-color: black;
+    width: 250px;
+    text-align: center;
+    height: 2rem;
+    color: black;
+    position: relative;
+    bottom: 5rem;
+    display: none;
+    font-size: 1.2rem;
+}
+
+/*兑换规则按钮*/
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.rule{
+    text-align: right;
+    padding-right: 1rem;
+    padding-top: 1rem;
+}
+.rule img {
+    width: 20px;
+    height:20px;
+}
+.rule span{
+    font-size: 0.8rem;
+    position: relative;
+    bottom: 6px;
+    color: #B0B0B0;
+}
+
+/*点击返回图片*/
+.back {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}
+.back img {
+    width: 50px;
+    height:50px;
+}

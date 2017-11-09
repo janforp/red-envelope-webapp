@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_customer_apply">
+    <resultMap id="BaseResultMap" type="com.iask.red_envelope.model.ReCustomerApply">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="customer_id" property="customerId" jdbcType="INTEGER"/>
+        <result column="draw_param" property="drawParam" jdbcType="VARCHAR"/>
+        <result column="is_draw" property="isDraw" jdbcType="TINYINT"/>
+    </resultMap>
+    <sql id="SELECT_All_Column">
+        SELECT id, customer_id, draw_param, is_draw
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.iask.red_envelope.model.ReCustomerApply">
+        <include refid="re_customer_apply.SELECT_All_Column"/>
+        FROM re_customer_apply
+        WHERE id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="com.iask.red_envelope.model.ReCustomerApply">
+        DELETE FROM re_customer_apply
+        WHERE id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.iask.red_envelope.model.ReCustomerApply">
+        INSERT INTO re_customer_apply ( customer_id, 
+          draw_param, is_draw )
+        VALUES ( #{customerId,jdbcType=INTEGER}, 
+          #{drawParam,jdbcType=VARCHAR}, #{isDraw,jdbcType=TINYINT} )
+        <selectKey keyProperty="id" resultType="int">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+    </insert>
+    <insert id="insertSelective" parameterType="com.iask.red_envelope.model.ReCustomerApply">
+        INSERT INTO re_customer_apply
+        <trim prefix="(" suffixOverrides="," suffix=")">
+            <if test="customerId != null">
+                customer_id,
+            </if>
+            <if test="drawParam != null">
+                draw_param,
+            </if>
+            <if test="isDraw != null">
+                is_draw,
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffixOverrides="," suffix=")">
+            <if test="customerId != null">
+                #{customerId,jdbcType=INTEGER},
+            </if>
+            <if test="drawParam != null">
+                #{drawParam,jdbcType=VARCHAR},
+            </if>
+            <if test="isDraw != null">
+                #{isDraw,jdbcType=TINYINT},
+            </if>
+        </trim>
+        <selectKey keyProperty="id" resultType="int">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+    </insert>
+    <insert id="insertBatch" parameterType="java.util.List">
+        INSERT INTO re_customer_apply ( customer_id, 
+          draw_param, is_draw )
+        VALUES
+        <foreach collection="list" item="item" index="index" separator="," >
+            (
+            #{item.customerId,jdbcType=INTEGER}, 
+            #{item.drawParam,jdbcType=VARCHAR}, #{item.isDraw,jdbcType=TINYINT}
+            )
+        </foreach>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.iask.red_envelope.model.ReCustomerApply">
+        UPDATE re_customer_apply
+        <set>
+            <if test="customerId != null">
+                customer_id = #{customerId,jdbcType=INTEGER},
+            </if>
+            <if test="drawParam != null">
+                draw_param = #{drawParam,jdbcType=VARCHAR},
+            </if>
+            <if test="isDraw != null">
+                is_draw = #{isDraw,jdbcType=TINYINT},
+            </if>
+        </set>
+        WHERE id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.iask.red_envelope.model.ReCustomerApply">
+        UPDATE re_customer_apply
+        SET customer_id = #{customerId,jdbcType=INTEGER},
+            draw_param = #{drawParam,jdbcType=VARCHAR},
+            is_draw = #{isDraw,jdbcType=TINYINT}
+        WHERE id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>

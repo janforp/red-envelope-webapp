@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_app_keywords">
+
+    <resultMap id="TaskMap" type="com.iask.red_envelope.model.dto.TaskInfo">
+        <id column="keyword_id" property="keywordId" jdbcType="BIGINT"/>
+        <result column="app_id" property="appId" jdbcType="BIGINT"/>
+        <result column="keyword" property="keyword" jdbcType="VARCHAR"/>
+        <result column="money" property="money" jdbcType="DECIMAL"/>
+        <result column="left_num" property="leftNum" jdbcType="INTEGER"/>
+        <result column="task_label" property="taskLabel" jdbcType="VARCHAR"/>
+        <result column="app_package" property="appPackage" jdbcType="VARCHAR"/>
+        <result column="app_icon" property="appIcon" jdbcType="VARCHAR"/>
+        <result column="app_market" property="appMarket" jdbcType="VARCHAR"/>
+        <result column="app_market" property="appMarket" jdbcType="VARCHAR"/>
+        <result column="market_package" property="marketPackage" jdbcType="VARCHAR"/>
+        <result column="market_url" property="marketUrl" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="selectByKeywordId" resultMap="TaskMap" parameterType="long">
+        SELECT a.keyword_id, a.app_id, a.keyword, a.money, a.left_num, a.task_label, b.app_package, b.app_icon, c.market_name as app_market, c.market_package, c.market_url
+        FROM re_app_keywords a, re_app b, re_app_market c
+        WHERE a.keyword_id = #{keywordId,jdbcType=BIGINT}
+        AND b.app_id = a.app_id
+        AND c.market_id = b.market_id
+    </select>
+
+    <select id="selectAllByLeftAndTime" resultMap="TaskMap" parameterType="map">
+        SELECT t.*
+        FROM (
+            SELECT a.keyword_id, a.app_id, a.keyword, a.money, a.left_num, a.task_label, b.app_package, b.app_icon, c.market_name as app_market, c.market_package, c.market_url
+            FROM re_app_keywords a, re_app b, re_app_market c
+            WHERE a.left_num > 0
+            AND a.release_time <![CDATA[ <= ]]> #{releaseTime,jdbcType=VARCHAR}
+            AND b.app_id = a.app_id
+            AND c.market_id = b.market_id
+            AND b.app_package NOT IN (SELECT app_package FROM re_user_andriod_app WHERE user_id = #{userId,jdbcType=INTEGER})
+            ORDER BY a.keyword_id DESC
+        ) t
+        GROUP BY t.app_market, t.keyword
+    </select>
+
+    <select id="selectLockByKeywordId" resultMap="BaseResultMap" parameterType="long">
+        <include refid="re_app_keywords.SELECT_All_Column"/>
+        FROM    re_app_keywords
+        WHERE   keyword_id = #{keywordId,jdbcType=BIGINT} FOR UPDATE
+    </select>
+
+
+</mapper>

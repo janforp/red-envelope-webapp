@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_financial_mall">
+    <resultMap id="BaseResultMap" type="com.iask.red_envelope.model.ReFinancialMall">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="icon" property="icon" jdbcType="VARCHAR"/>
+        <result column="desc" property="desc" jdbcType="VARCHAR"/>
+        <result column="money" property="money" jdbcType="DECIMAL"/>
+        <result column="investment_time" property="investmentTime" jdbcType="INTEGER"/>
+        <result column="earning" property="earning" jdbcType="DECIMAL"/>
+        <result column="package_name" property="packageName" jdbcType="VARCHAR"/>
+        <result column="android_package_url" property="androidPackageUrl" jdbcType="VARCHAR"/>
+        <result column="ios_package_url" property="iosPackageUrl" jdbcType="VARCHAR"/>
+        <result column="labels" property="labels" jdbcType="VARCHAR"/>
+        <result column="click_url" property="clickUrl" jdbcType="VARCHAR"/>
+        <result column="mall_order" property="mallOrder" jdbcType="TINYINT"/>
+        <result column="platform" property="platform" jdbcType="TINYINT"/>
+        <result column="create_time" property="createTime" jdbcType="VARCHAR"/>
+        <result column="update_time" property="updateTime" jdbcType="VARCHAR"/>
+        <result column="is_end" property="isEnd" jdbcType="TINYINT"/>
+    </resultMap>
+    <sql id="SELECT_All_Column">
+        SELECT id, title, icon, `desc`, money, 
+        investment_time, earning, package_name, android_package_url, ios_package_url, 
+        labels, click_url, mall_order, platform, create_time, 
+        update_time, is_end
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.iask.red_envelope.model.ReFinancialMall">
+        <include refid="re_financial_mall.SELECT_All_Column"/>
+        FROM re_financial_mall
+        WHERE id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="com.iask.red_envelope.model.ReFinancialMall">
+        DELETE FROM re_financial_mall
+        WHERE id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.iask.red_envelope.model.ReFinancialMall">
+        INSERT INTO re_financial_mall ( title, 
+          icon, `desc`, money, 
+          investment_time, earning, package_name, 
+          android_package_url, ios_package_url, labels, 
+          click_url, mall_order, platform, 
+          create_time, update_time, is_end )
+        VALUES ( #{title,jdbcType=VARCHAR}, 
+          #{icon,jdbcType=VARCHAR}, #{desc,jdbcType=VARCHAR}, #{money,jdbcType=DECIMAL}, 
+          #{investmentTime,jdbcType=INTEGER}, #{earning,jdbcType=DECIMAL}, #{packageName,jdbcType=VARCHAR}, 
+          #{androidPackageUrl,jdbcType=VARCHAR}, #{iosPackageUrl,jdbcType=VARCHAR}, #{labels,jdbcType=VARCHAR}, 
+          #{clickUrl,jdbcType=VARCHAR}, #{mallOrder,jdbcType=TINYINT}, #{platform,jdbcType=TINYINT}, 
+          #{createTime,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR}, #{isEnd,jdbcType=TINYINT} )
+        <selectKey keyProperty="id" resultType="long">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+    </insert>
+    <insert id="insertSelective" parameterType="com.iask.red_envelope.model.ReFinancialMall">
+        INSERT INTO re_financial_mall
+        <trim prefix="(" suffixOverrides="," suffix=")">
+            <if test="title != null">
+                title,
+            </if>
+            <if test="icon != null">
+                icon,
+            </if>
+            <if test="desc != null">
+                `desc`,
+            </if>
+            <if test="money != null">
+                money,
+            </if>
+            <if test="investmentTime != null">
+                investment_time,
+            </if>
+            <if test="earning != null">
+                earning,
+            </if>
+            <if test="packageName != null">
+                package_name,
+            </if>
+            <if test="androidPackageUrl != null">
+                android_package_url,
+            </if>
+            <if test="iosPackageUrl != null">
+                ios_package_url,
+            </if>
+            <if test="labels != null">
+                labels,
+            </if>
+            <if test="clickUrl != null">
+                click_url,
+            </if>
+            <if test="mallOrder != null">
+                mall_order,
+            </if>
+            <if test="platform != null">
+                platform,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="isEnd != null">
+                is_end,
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffixOverrides="," suffix=")">
+            <if test="title != null">
+                #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="icon != null">
+                #{icon,jdbcType=VARCHAR},
+            </if>
+            <if test="desc != null">
+                #{desc,jdbcType=VARCHAR},
+            </if>
+            <if test="money != null">
+                #{money,jdbcType=DECIMAL},
+            </if>
+            <if test="investmentTime != null">
+                #{investmentTime,jdbcType=INTEGER},
+            </if>
+            <if test="earning != null">
+                #{earning,jdbcType=DECIMAL},
+            </if>
+            <if test="packageName != null">
+                #{packageName,jdbcType=VARCHAR},
+            </if>
+            <if test="androidPackageUrl != null">
+                #{androidPackageUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="iosPackageUrl != null">
+                #{iosPackageUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="labels != null">
+                #{labels,jdbcType=VARCHAR},
+            </if>
+            <if test="clickUrl != null">
+                #{clickUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="mallOrder != null">
+                #{mallOrder,jdbcType=TINYINT},
+            </if>
+            <if test="platform != null">
+                #{platform,jdbcType=TINYINT},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=VARCHAR},
+            </if>
+            <if test="isEnd != null">
+                #{isEnd,jdbcType=TINYINT},
+            </if>
+        </trim>
+        <selectKey keyProperty="id" resultType="long">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+    </insert>
+    <insert id="insertBatch" parameterType="java.util.List">
+        INSERT INTO re_financial_mall ( title, 
+          icon, `desc`, money, 
+          investment_time, earning, package_name, 
+          android_package_url, ios_package_url, labels, 
+          click_url, mall_order, platform, 
+          create_time, update_time, is_end )
+        VALUES
+        <foreach collection="list" item="item" index="index" separator="," >
+            (
+            #{item.title,jdbcType=VARCHAR}, 
+            #{item.icon,jdbcType=VARCHAR}, #{item.desc,jdbcType=VARCHAR}, #{item.money,jdbcType=DECIMAL}, 
+            #{item.investmentTime,jdbcType=INTEGER}, #{item.earning,jdbcType=DECIMAL}, #{item.packageName,jdbcType=VARCHAR}, 
+            #{item.androidPackageUrl,jdbcType=VARCHAR}, #{item.iosPackageUrl,jdbcType=VARCHAR}, #{item.labels,jdbcType=VARCHAR}, 
+            #{item.clickUrl,jdbcType=VARCHAR}, #{item.mallOrder,jdbcType=TINYINT}, #{item.platform,jdbcType=TINYINT}, 
+            #{item.createTime,jdbcType=VARCHAR}, #{item.updateTime,jdbcType=VARCHAR}, #{item.isEnd,jdbcType=TINYINT}
+            )
+        </foreach>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.iask.red_envelope.model.ReFinancialMall">
+        UPDATE re_financial_mall
+        <set>
+            <if test="title != null">
+                title = #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="icon != null">
+                icon = #{icon,jdbcType=VARCHAR},
+            </if>
+            <if test="desc != null">
+                `desc` = #{desc,jdbcType=VARCHAR},
+            </if>
+            <if test="money != null">
+                money = #{money,jdbcType=DECIMAL},
+            </if>
+            <if test="investmentTime != null">
+                investment_time = #{investmentTime,jdbcType=INTEGER},
+            </if>
+            <if test="earning != null">
+                earning = #{earning,jdbcType=DECIMAL},
+            </if>
+            <if test="packageName != null">
+                package_name = #{packageName,jdbcType=VARCHAR},
+            </if>
+            <if test="androidPackageUrl != null">
+                android_package_url = #{androidPackageUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="iosPackageUrl != null">
+                ios_package_url = #{iosPackageUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="labels != null">
+                labels = #{labels,jdbcType=VARCHAR},
+            </if>
+            <if test="clickUrl != null">
+                click_url = #{clickUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="mallOrder != null">
+                mall_order = #{mallOrder,jdbcType=TINYINT},
+            </if>
+            <if test="platform != null">
+                platform = #{platform,jdbcType=TINYINT},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=VARCHAR},
+            </if>
+            <if test="isEnd != null">
+                is_end = #{isEnd,jdbcType=TINYINT},
+            </if>
+        </set>
+        WHERE id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.iask.red_envelope.model.ReFinancialMall">
+        UPDATE re_financial_mall
+        SET title = #{title,jdbcType=VARCHAR},
+            icon = #{icon,jdbcType=VARCHAR},
+            `desc` = #{desc,jdbcType=VARCHAR},
+            money = #{money,jdbcType=DECIMAL},
+            investment_time = #{investmentTime,jdbcType=INTEGER},
+            earning = #{earning,jdbcType=DECIMAL},
+            package_name = #{packageName,jdbcType=VARCHAR},
+            android_package_url = #{androidPackageUrl,jdbcType=VARCHAR},
+            ios_package_url = #{iosPackageUrl,jdbcType=VARCHAR},
+            labels = #{labels,jdbcType=VARCHAR},
+            click_url = #{clickUrl,jdbcType=VARCHAR},
+            mall_order = #{mallOrder,jdbcType=TINYINT},
+            platform = #{platform,jdbcType=TINYINT},
+            create_time = #{createTime,jdbcType=VARCHAR},
+            update_time = #{updateTime,jdbcType=VARCHAR},
+            is_end = #{isEnd,jdbcType=TINYINT}
+        WHERE id = #{id,jdbcType=BIGINT}
+    </update>
+</mapper>

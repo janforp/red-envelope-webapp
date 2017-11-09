@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>常见问题</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <script type="text/javascript" src="http://img.notepasses.com/jquery-1.9.1.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            user-select: none;
+            font-size: 62.5%;
+        }
+        span {
+            font-size: 1.3rem;
+        }
+        a {
+            display:inline-block;
+            text-decoration: none;
+            width: 100%;
+            font-size: 0.8rem;
+        }
+
+        p {
+            line-height: 1.5;
+            font-size: 0.7rem;
+        }
+
+        .content {
+            margin-top: 1rem;
+        }
+
+        .toggle {
+            margin-top: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            height: auto;
+            background-color: #ffffff;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 414px;
+            position: relative;
+        }
+
+        .title_line {
+            margin: 1rem -1rem 0 -1rem;
+            border-top: 1px solid #EFEFEF;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            $(".toggle").click(function() {
+                $(this).parent().find(".content").slideToggle();
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div style="margin: 1rem">
+
+            <div>
+                <span>常见问题</span>
+            </div>
+
+            <div class="title_line"></div>
+
+            <div>
+                <a href="#" class="toggle">1、怎样参加51夺宝？</a>
+                <div class="content" style="display: none;">
+                    <p>使用邮箱或者手机号码登陆，就可以参加51夺宝了。</p>
+                    <p>参加方式：</p>
+                    <p>1选择喜欢的商品，选择要参与的人次并支付；</p>
+                    <p>2每人次需要花费1元，获得1个夺宝号码，然后开始夺宝。</p>
+                </div>
+            </div>
+
+            <div class="title_line"></div>
+
+            <div>
+                <a href="#" class="toggle">2、51夺宝是怎么计算幸运号码的？</a>
+                <div class="content" style="display: none;">
+                    <p>1）商品的最后一个号码分配完毕后，将公示截止该时间点本站全部商品的最后100个参与时间；</p>
+                    <p>2）将这100个时间的数值进行求和（得出数值A）（每个时间按时、分、秒、毫秒的顺序组合，如10:15:36.211则为101536211）；</p>
+                    <p>3）为保证公平公正公开，系统还会等待一小段时间，数值A除以该商品总需人次得到的余数 + 原始数 10000001，得到最终幸运号码，拥有该幸运号码者，直接获得该商品。</p>
+                </div>
+            </div>
+
+            <div class="title_line"></div>
+
+            <div>
+                <a href="#" class="toggle">3、怎样查看是否成为幸运用户？</a>
+                <div class="content" style="display: none;">
+                    <p>个人中心有您的夺宝记录，点击对应的记录，即可知道该期夺宝的获得者；如果您成为幸运用户，将会有邮件、短信等方式的通知。</p>
+                </div>
+            </div>
+
+            <div class="title_line"></div>
+
+            <div>
+                <a href="#" class="toggle">4、商品是正品吗？如何保证？</a>
+                <div class="content" style="display: none;">
+                    <p>商品由第三方商家提供及发货，100%正品，可享受厂家所提供的全国联保服务。</p>
+                </div>
+            </div>
+
+            <div class="title_line"></div>
+
+            <div>
+                <a href="#" class="toggle">5、收到的商品可以退换货吗？</a>
+                <div class="content" style="display: none;">
+                    <p>非质量问题，不在三包范围内，不给予退换货。请尽量亲自签收并当面拆箱验货，如果发现运输途中造成了商品的损坏，请不要签收，可以拒签退回。
+                    </p>
+                </div>
+            </div>
+
+            <div class="title_line"></div>
+
+            <div>
+                <a href="#" class="toggle">6、参与51夺宝需要注意什么？</a>
+                <div class="content" style="display: none;">
+                    <p>为了确保在您成为幸运用户后第一时间收到通知，请务必正确填写真实有效的联系电话和收货地址。
+                    </p>
+                </div>
+            </div>
+
+            <div class="title_line"></div>
+
+            <div>
+                <a href="#" class="toggle">7、建议反馈</a>
+                <div class="content" style="display: none;">
+                    <p>如果您有任何意见或建议，请点击联系客服与我们联系，谢谢！
+                    </p>
+                </div>
+            </div>
+
+            <div class="title_line"></div>
+
+        </div>
+
+    </div>
+</body>
+</html>

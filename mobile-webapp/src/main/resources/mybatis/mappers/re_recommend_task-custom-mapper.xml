@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_recommend_task">
+
+    <select id="selectByUserIdAndMissionId" resultMap="BaseResultMap" parameterType="map">
+        <include refid="re_recommend_task.SELECT_All_Column"/>
+        FROM re_recommend_task
+        WHERE user_id = #{userId,jdbcType=INTEGER}
+        AND mission_id = #{missionId,jdbcType=BIGINT}
+        AND task_status != 4
+    </select>
+
+    <select id="selectByUserIdAndMissionIdAndStatus" resultMap="BaseResultMap" parameterType="map">
+        <include refid="re_recommend_task.SELECT_All_Column"/>
+        FROM re_recommend_task
+        WHERE user_id = #{userId,jdbcType=INTEGER}
+        AND mission_id = #{missionId,jdbcType=BIGINT}
+        AND task_status IN (0, 1, 2)
+    </select>
+
+    <select id="getOvertimeMissionByUserIdMissionId" resultMap="BaseResultMap" parameterType="map">
+        <include refid="re_recommend_task.SELECT_All_Column"/>
+        FROM re_recommend_task
+        WHERE user_id = #{userId,jdbcType=INTEGER}
+        AND mission_id = #{missionId,jdbcType=BIGINT}
+        AND task_status = 0
+    </select>
+
+    <select id="selectOvertimeTask" resultMap="BaseResultMap" parameterType="long">
+        <include refid="re_recommend_task.SELECT_All_Column"/>
+        FROM re_recommend_task
+        WHERE task_status = 0
+        AND release_time IS NOT NULL
+        AND release_time <![CDATA[ <= ]]> #{releaseTime,jdbcType=BIGINT}
+        FOR UPDATE
+    </select>
+
+</mapper>

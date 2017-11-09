@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+
+
+    <script src="/plugins/jquery/jquery-all.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/plugins/weui-1.0.2/css/weui.min.css">
+    <script src="/plugins/weui-1.0.2/js/weui.js"></script>
+
+
+    <style>
+        .page, body {
+            background-color: #f8f8f8;
+        }
+    </style>
+</head>
+<body>
+    <div class="weui-cells__title">投诉描述</div>
+    <div class="weui-cells weui-cells_form">
+     <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <textarea class="weui-textarea" placeholder="" rows="3" onkeyup="wordCount(this)" id="inputValue"></textarea>
+                <div class="weui-textarea-counter"><span id="wordsNum">0</span>/50</div>
+            </div>
+    </div>
+    </div>
+    <div class="weui-btn-area">
+        <a class="weui-btn weui-btn_primary weui-btn_disabled" href="complainSuccess.html" id="commit">提交</a>
+    </div>
+
+    <script>
+
+        function wordCount(input) {
+
+            var wordsNum = input.value.length;
+            var div = document.getElementById('commit');
+
+            var inputValue = "";
+
+            $("#wordsNum").text(wordsNum);
+
+            if (wordsNum == 0){
+
+                div.setAttribute("class", "weui-btn weui-btn_primary weui-btn_disabled");
+            }else if (wordsNum > 0){
+
+                div.setAttribute("class", "weui-btn weui-btn_primary");
+            }
+
+            if(wordsNum >= 50){
+
+                inputValue = $("#inputValue").val();
+                $("#inputValue").val(inputValue.substr(0,49));
+                $("#wordsNum").text(50);
+            }
+        }
+
+        $(function () {
+        })
+    </script>
+
+
+    <div id="global-toast" style="display: none;">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+            <p class="weui-toast__content">&nbsp;</p>
+        </div>
+    </div>
+
+    <div id="global-toast-loading" style="display: none;">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <i class="weui-loading weui-icon_toast"></i>
+            <p class="weui-toast__content">&nbsp;</p>
+        </div>
+    </div>
+
+    <div id="global-dialog-confirm" style="display: none;">
+        <div class="weui-mask"></div>
+        <div class="weui-dialog">
+            <div class="weui-dialog__hd"><strong class="weui-dialog__title">&nbsp;</strong></div>
+            <div class="weui-dialog__bd">&nbsp;</div>
+            <div class="weui-dialog__ft">
+                <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">取消</a>
+                <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确定</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="global-dialog-alert" style="display: none;">
+        <div class="weui-mask"></div>
+        <div class="weui-dialog">
+            <div class="weui-dialog__hd"><strong class="weui-dialog__title">&nbsp;</strong></div>
+            <div class="weui-dialog__bd">&nbsp;</div>
+            <div class="weui-dialog__ft">
+                <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确定</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

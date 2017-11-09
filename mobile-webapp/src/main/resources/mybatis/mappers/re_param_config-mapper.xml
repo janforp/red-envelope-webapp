@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_param_config">
+    <resultMap id="BaseResultMap" type="com.iask.red_envelope.model.ReParamConfig">
+        <id column="param_type" property="paramType" jdbcType="VARCHAR"/>
+        <result column="param_name" property="paramName" jdbcType="VARCHAR"/>
+        <result column="first_value" property="firstValue" jdbcType="VARCHAR"/>
+        <result column="second_value" property="secondValue" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="SELECT_All_Column">
+        SELECT param_type, param_name, first_value, second_value
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.iask.red_envelope.model.ReParamConfig">
+        <include refid="re_param_config.SELECT_All_Column"/>
+        FROM re_param_config
+        WHERE param_type = #{paramType,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="com.iask.red_envelope.model.ReParamConfig">
+        DELETE FROM re_param_config
+        WHERE param_type = #{paramType,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" parameterType="com.iask.red_envelope.model.ReParamConfig">
+        INSERT INTO re_param_config ( param_type, 
+          param_name, first_value, second_value )
+        VALUES ( #{paramType,jdbcType=VARCHAR}, 
+          #{paramName,jdbcType=VARCHAR}, #{firstValue,jdbcType=VARCHAR}, #{secondValue,jdbcType=VARCHAR} )
+    </insert>
+    <insert id="insertSelective" parameterType="com.iask.red_envelope.model.ReParamConfig">
+        INSERT INTO re_param_config
+        <trim prefix="(" suffixOverrides="," suffix=")">
+                param_type,
+            <if test="paramName != null">
+                param_name,
+            </if>
+            <if test="firstValue != null">
+                first_value,
+            </if>
+            <if test="secondValue != null">
+                second_value,
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffixOverrides="," suffix=")">
+                #{paramType,jdbcType=VARCHAR},
+            <if test="paramName != null">
+                #{paramName,jdbcType=VARCHAR},
+            </if>
+            <if test="firstValue != null">
+                #{firstValue,jdbcType=VARCHAR},
+            </if>
+            <if test="secondValue != null">
+                #{secondValue,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <insert id="insertBatch" parameterType="java.util.List">
+        INSERT INTO re_param_config ( param_type, 
+          param_name, first_value, second_value )
+        VALUES
+        <foreach collection="list" item="item" index="index" separator="," >
+            (
+            #{item.paramType,jdbcType=VARCHAR}, 
+            #{item.paramName,jdbcType=VARCHAR}, #{item.firstValue,jdbcType=VARCHAR}, #{item.secondValue,jdbcType=VARCHAR}
+            )
+        </foreach>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.iask.red_envelope.model.ReParamConfig">
+        UPDATE re_param_config
+        <set>
+            <if test="paramName != null">
+                param_name = #{paramName,jdbcType=VARCHAR},
+            </if>
+            <if test="firstValue != null">
+                first_value = #{firstValue,jdbcType=VARCHAR},
+            </if>
+            <if test="secondValue != null">
+                second_value = #{secondValue,jdbcType=VARCHAR},
+            </if>
+        </set>
+        WHERE param_type = #{paramType,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.iask.red_envelope.model.ReParamConfig">
+        UPDATE re_param_config
+        SET param_name = #{paramName,jdbcType=VARCHAR},
+            first_value = #{firstValue,jdbcType=VARCHAR},
+            second_value = #{secondValue,jdbcType=VARCHAR}
+        WHERE param_type = #{paramType,jdbcType=VARCHAR}
+    </update>
+</mapper>

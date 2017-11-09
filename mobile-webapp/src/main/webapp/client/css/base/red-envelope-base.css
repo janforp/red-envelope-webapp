@@ -1,0 +1,42 @@
+/*主色*/
+.red-main-bg-color-first{
+    background-color: #f96301;
+}
+.red-main-color{
+    color:#f96301;
+}
+/*辅色*/
+.red-main-bg-color-secondary{
+    background-color: #3ccaff;
+}
+.red-secondary-color{
+    color:#3ccaff;
+}
+/*背景色*/
+.red-bg-color{
+    background-color: #f5f5f5;
+}
+/*辅助线*/
+.red-assist-line{
+    color: #e0e0e0;
+}
+/*不同模块之间的间距*/
+.red-model-separator-line{
+    height: 10px;
+}
+/*大标题*/
+.red-lg-title{
+    color: #1e1e1e;
+}
+/*标题*/
+.red-normal-title{
+    color: #3c3c3c;
+}
+/*正文*/
+.red-content{
+    color: #3c3c3c;
+}
+/*注释*/
+.red-comment{
+    color: #969696;
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_user">
+
+    <resultMap id="UserKeySecretResultMap" type="com.iask.red_envelope.model.cache.UserKeySecret">
+        <result column="user_id" property="userId" jdbcType="INTEGER"/>
+        <result column="user_secret" property="userSecret" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="UserInfoMap" type="com.iask.red_envelope.model.dto.ReUserInfo">
+        <result column="nickname" property="nickname" jdbcType="VARCHAR"/>
+        <result column="portrait" property="portrait" jdbcType="VARCHAR"/>
+        <result column="user_money" property="userMoney" jdbcType="DECIMAL"/>
+        <result column="user_score" property="userScore" jdbcType="INTEGER"/>
+        <result column="sign_count" property="signCount" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="selectUserByUserKey" parameterType="String" resultMap="UserKeySecretResultMap">
+        SELECT user_id, user_secret
+        FROM re_user
+        WHERE user_key = #{userKey,jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectByUserIdAndStatus" parameterType="INTEGER" resultMap="BaseResultMap">
+        <include refid="re_user.SELECT_All_Column"/>
+        FROM re_user
+        WHERE user_status = 1
+        AND user_id = #{userId,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectUserInfo" parameterType="INTEGER" resultMap="UserInfoMap">
+        SELECT nickname, portrait, user_money, user_score, sign_count
+        FROM re_user
+        WHERE user_id = #{userId,jdbcType=INTEGER}
+    </select>
+
+
+    <select id="selectLockByUserId" parameterType="INTEGER" resultMap="BaseResultMap">
+        <include refid="re_user.SELECT_All_Column"/>
+        FROM re_user
+        WHERE user_id = #{userId,jdbcType=INTEGER} FOR UPDATE
+    </select>
+
+    <select id="selectUserByMobile" resultMap="BaseResultMap" parameterType="String">
+        <include refid="re_user.SELECT_All_Column"/>
+        FROM re_user
+        WHERE mobile = #{mobile,jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectByUserKeyAndLock" resultMap="BaseResultMap" parameterType="String">
+        <include refid="re_user.SELECT_All_Column"/>
+        FROM re_user
+        WHERE user_key = #{userKey,jdbcType=VARCHAR}
+        FOR UPDATE
+    </select>
+
+</mapper>

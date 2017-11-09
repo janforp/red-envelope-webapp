@@ -1,0 +1,309 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    font-size: 62.5%;
+    overflow: hidden;
+}
+.content{
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 414px;
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.phoneImg {
+    float: left;
+    width:20%;
+    text-align: center;
+
+    padding-bottom:20px;
+
+    border-bottom: 1px solid #EFEFEF;
+}
+
+.codeImg {
+
+    float: left;
+    width:20%;
+    text-align: center;
+    padding-bottom:20px;
+    padding-top: 20px;
+    border-bottom: 1px solid #EFEFEF;
+}
+
+.phoneImg img {
+
+    height: 30px;
+    width:auto;
+}
+
+.codeImg img {
+    height: 30px;
+    width:auto;
+}
+
+.phoneInput {
+    float: left;
+    width:80%;
+    text-align: left;
+
+    padding-bottom:20px;
+
+    border-bottom: 1px solid #EFEFEF;
+
+}
+
+.codeInput {
+    float: left;
+    width:55%;
+    text-align: left;
+
+    padding-bottom:20px;
+    padding-top: 20px;
+
+    border-bottom: 1px solid #EFEFEF;
+}
+.phoneInput input {
+
+    width:100%;
+    height: 30px;
+    text-decoration:none;
+    border:none;
+    font-size: 1rem;
+}
+
+input {
+    line-height: 30px;
+}
+
+.codeInput input {
+    width:100%;
+    height: 30px;
+    text-decoration:none;
+    border:none;
+    font-size: 1rem;
+}
+
+.getImgCode {
+
+    float: left;
+    width:25%;
+    text-align: center;
+
+    padding-bottom:20px;
+    padding-top: 20px;
+
+    border-bottom: 1px solid #EFEFEF;
+}
+.getImgCode button {
+    height:30px;
+    border: 1px solid red;
+    border-radius: 8px;
+    width: 90%;
+    font-size: 0.9rem;
+    background-color: transparent;
+}
+.userAgreement span {
+
+    display: inline-block;
+    margin-top:0.5rem;
+    font-size: 0.8rem;
+}
+
+.blueSpan{
+    color: blue;;
+}
+
+/*图形验证码输入框*/
+.imgCodeInput {
+
+    float: left;
+    width:75%;
+
+    text-align: center;
+
+    padding-bottom:20px;
+    padding-top: 20px;
+
+    /*border-bottom: 1px solid #EFEFEF;*/
+
+}
+/*图形验证码*/
+.imgCode {
+
+    float: left;
+    width:25%;
+
+    text-align: center;
+
+    padding-bottom:20px;
+    padding-top: 20px;
+
+    /*border-bottom: 1px solid #EFEFEF;*/
+}
+
+.imgCode img {
+    height: 30px;
+}
+
+
+/*提交按钮div*/
+.loginButtonDiv{
+
+    margin-top: 20px;
+    text-align: center;
+}
+.loginButtonDiv button {
+
+    width: 90%;
+    background-color: red;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+/*下载按钮div*/
+.downloadDiv{
+
+    margin-top: 20px;
+    text-align: center;
+}
+.downloadDiv button {
+    width: 90%;
+    background-color: red;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+
+
+#LoginBox{
+    padding-top: 2rem;
+    position: fixed;
+    width:80%;
+    height: 300px;
+    margin: 1% 10% 5% 10%;
+    top: 8rem;
+    z-index:10000;
+    background-color: #EFEFEF;
+    background-color: #EFEFEF;
+    /*-moz-opacity: 0.7;*/
+    /*opacity: .70;*/
+    /*filter: alpha(opacity=70);*/
+    border-radius: 1rem;
+
+}
+
+.row {
+    height:50px;
+    line-height:50px;
+    margin: 5px 5px 5px 5px;
+    padding:0px 30px;
+    font-family:华文楷体;
+    font-size:15px;
+    text-align: center;
+    /*border: 1px solid red;*/
+    text-align: center;
+}
+/*#phone{*/
+    /*height: 30px;*/
+    /*width: 100%;*/
+    /*background-color: transparent;*/
+    /*margin: 2px;*/
+    /*border:none;*/
+    /*outline: none;*/
+    /*line-height: 45px;*/
+    /*font-size: 1rem;*/
+/*}*/
+
+::-webkit-input-placeholder{
+    color:#999;
+    font-size: large;
+}
+#vCode{
+    height: 45px;
+    width: 100%;
+    background-color: transparent;
+    margin: 2px;
+    border:none;
+    outline: none;
+    line-height: 45px;
+    font-size: 1rem;
+}
+
+.captcha{
+    height: 45px;
+    width: 100%;
+    margin-top: 10px;
+}
+.getSmsCode{
+    height: 30px;
+    width: 100px;
+    margin-top: 10px;
+    font-size: 0.2rem;
+    background-color: transparent;
+    border: 1px solid blue;
+    border-radius: 2px;
+    outline: none;
+}
+
+#alert{
+    height: 45px;
+    width: 100%;
+    background-color: transparent;
+    margin: 2px;
+    border:none;
+    outline: none;
+    line-height: 45px;
+    color: red;
+    font-size: 1rem;
+}
+
+.loginBtn{
+    color:White;
+    background:#4490f7;
+    text-decoration:none;
+    padding:10px 50px;
+    margin-left:0px;
+    margin-top:40px;
+    border-radius:5px;
+    opacity:0.8;
+    filter:alpha(opacity=80);
+}
+
+.downloadBtn{
+    color:White;
+    background:#b94441;
+    text-decoration:none;
+    padding:10px 50px;
+    margin-left:0px;
+    margin-top:40px;
+    border-radius:5px;
+    opacity:0.8;
+    filter:alpha(opacity=80);
+}
+
+#buttonSpan{
+
+    font-size: 1rem;
+}

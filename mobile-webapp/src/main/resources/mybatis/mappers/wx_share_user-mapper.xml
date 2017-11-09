@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="wx_share_user">
+    <resultMap id="BaseResultMap" type="com.iask.red_envelope.model.WxShareUser">
+        <id column="user_id" property="userId" jdbcType="BIGINT"/>
+        <result column="open_id" property="openId" jdbcType="VARCHAR"/>
+        <result column="user_ip" property="userIp" jdbcType="VARCHAR"/>
+        <result column="update_time" property="updateTime" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="SELECT_All_Column">
+        SELECT user_id, open_id, user_ip, update_time, create_time
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.iask.red_envelope.model.WxShareUser">
+        <include refid="wx_share_user.SELECT_All_Column"/>
+        FROM wx_share_user
+        WHERE user_id = #{userId,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="com.iask.red_envelope.model.WxShareUser">
+        DELETE FROM wx_share_user
+        WHERE user_id = #{userId,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.iask.red_envelope.model.WxShareUser">
+        INSERT INTO wx_share_user ( open_id, 
+          user_ip, update_time, create_time )
+        VALUES ( #{openId,jdbcType=VARCHAR}, 
+          #{userIp,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR} )
+        <selectKey keyProperty="userId" resultType="long">
+            SELECT LAST_INSERT_ID() AS userId
+        </selectKey>
+    </insert>
+    <insert id="insertSelective" parameterType="com.iask.red_envelope.model.WxShareUser">
+        INSERT INTO wx_share_user
+        <trim prefix="(" suffixOverrides="," suffix=")">
+            <if test="openId != null">
+                open_id,
+            </if>
+            <if test="userIp != null">
+                user_ip,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffixOverrides="," suffix=")">
+            <if test="openId != null">
+                #{openId,jdbcType=VARCHAR},
+            </if>
+            <if test="userIp != null">
+                #{userIp,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=VARCHAR},
+            </if>
+        </trim>
+        <selectKey keyProperty="userId" resultType="long">
+            SELECT LAST_INSERT_ID() AS userId
+        </selectKey>
+    </insert>
+    <insert id="insertBatch" parameterType="java.util.List">
+        INSERT INTO wx_share_user ( open_id, 
+          user_ip, update_time, create_time )
+        VALUES
+        <foreach collection="list" item="item" index="index" separator="," >
+            (
+            #{item.openId,jdbcType=VARCHAR}, 
+            #{item.userIp,jdbcType=VARCHAR}, #{item.updateTime,jdbcType=VARCHAR}, #{item.createTime,jdbcType=VARCHAR}
+            )
+        </foreach>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.iask.red_envelope.model.WxShareUser">
+        UPDATE wx_share_user
+        <set>
+            <if test="openId != null">
+                open_id = #{openId,jdbcType=VARCHAR},
+            </if>
+            <if test="userIp != null">
+                user_ip = #{userIp,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=VARCHAR},
+            </if>
+        </set>
+        WHERE user_id = #{userId,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.iask.red_envelope.model.WxShareUser">
+        UPDATE wx_share_user
+        SET open_id = #{openId,jdbcType=VARCHAR},
+            user_ip = #{userIp,jdbcType=VARCHAR},
+            update_time = #{updateTime,jdbcType=VARCHAR},
+            create_time = #{createTime,jdbcType=VARCHAR}
+        WHERE user_id = #{userId,jdbcType=BIGINT}
+    </update>
+</mapper>

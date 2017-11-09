@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_financial_mall">
+
+    <select id="getListOrderByType" resultMap="BaseResultMap" parameterType="map">
+        <include refid="re_financial_mall.SELECT_All_Column"/>
+        FROM re_financial_mall
+        WHERE is_end = 1
+        AND (platform = #{platform,jdbcType=INTEGER} OR platform = 2)
+        <if test="orderType == 0">
+            ORDER BY mall_order DESC,create_time ASC
+        </if>
+        <if test="orderType == 1">
+            ORDER BY money DESC,create_time ASC
+        </if>
+        <if test="orderType == 2">
+            ORDER BY investment_time ASC,create_time ASC
+        </if>
+    </select>
+
+</mapper>

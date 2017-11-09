@@ -1,0 +1,286 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    font-size: 62.5%;
+}
+.content{
+    width: 100%;
+    margin:0 auto;
+    max-width: 414px;
+
+    height: 500px;
+}
+
+/*顶部 start*/
+.headDiv{
+    width: 100%;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.imgDiv{
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.imgDiv img{
+    width: 50px;
+}
+.titleDiv{
+    width: 50%;
+    margin-left: 0rem;
+}
+.titleDiv span{
+    display: block;
+    line-height: 20px;
+    color: #1e1e1e;
+}
+.titleDiv span:nth-child(1){
+    font-size: 1rem;
+    color: #1e1e1e;
+    margin-bottom: 0px;
+}
+.titleDiv span:nth-child(2){
+    font-size: 0.8rem;
+    color: #A1A1A1;
+    margin-top: 2px;
+}
+.moneyDiv{
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color:#FE3248;
+    font-size: 0.7rem;
+}
+
+.moneyDiv .money{
+    color:#FE3248;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.moneyDiv .unit{
+    margin-top: 3px;
+    color:#FE3248;
+    font-size: 0.8rem;
+}
+
+.moneyDiv span{
+    color:#FE3248;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.labelDiv{
+    width: 100%;
+    border-bottom: 5px solid #EFEFEF;
+    padding-left: 22%;
+    padding-right: 2%;
+    margin-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.labelDiv span{
+    display: inline-block;
+    padding: 5px 3px  2px 3px;
+    border:1px solid #3ccaff;
+    color: #3ccaff;
+    font-size:0.6rem;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+/*顶部 over*/
+
+/*任务简介 start*/
+.title{
+    padding: 0.3rem 0.5rem;
+    border-bottom:1px solid #EFEFEF;
+    font-size: 1rem;
+    color: #949494;
+    display: flex;
+    justify-content: space-between;
+}
+.title span{
+    display: inline-block;
+}
+.descDiv{
+    padding: 0.7rem 0.5rem;
+    border-bottom: 5px solid #EFEFEF;
+}
+.descDiv span{
+    font-size: 1rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    line-height: 22px;
+    color: #1e1e1e;
+}
+/*任务简介 over*/
+
+/*任务步骤 start*/
+.stepDiv{
+    padding: 0rem 0.5rem;
+    border-bottom:5px solid #EFEFEF;
+}
+
+.oneStepDiv{
+    margin: 1.2rem 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #EFEFEF;
+}
+
+.stepDiv .oneStepDiv:nth-last-child(1){
+    border-bottom: none;
+}
+
+.steps{
+    font-size: 1.1rem;
+    color: #303030;
+    width: 20%;
+}
+.stepContent{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.stepContent a{
+
+    display: block;
+    /*background-color: #FFC338;*/
+    letter-spacing: 2px;
+    width: 100%;
+    padding: 0.5rem 0;
+    margin: 0.5rem 2rem 0.5rem 0;
+    border-radius: 4px;
+    text-align: center;
+    color: #FFF2D1;
+}
+
+.stepContent span{
+    display: block;
+    width: 100%;
+    font-size: 1.1rem;
+    color: #8B8B8B;
+    /*line-height: 22px;*/
+}
+.stepImg{
+    margin: 0.5rem 0;
+}
+.stepContent img{
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    border: 1px solid #EFEFEF;
+    padding: 0px;
+    /*margin-right: 0.5rem;*/
+}
+
+.copy{
+    background-color: #3ccaff;
+}
+.download{
+    background-color: #3ccaff;
+}
+.openApp{
+    background-color: #3ccaff;
+}
+.link{
+    background-color: #3ccaff;
+}
+
+/*任务步骤 over*/
+
+/*审核要求 start*/
+.submitDiv{
+    padding: 0.7rem 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    /*margin-bottom: 70px;*/
+}
+
+.comments {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: flex-start;
+}
+.commentTitle{
+    width: 25%;
+    text-align: left;
+}
+.commentTitle span{
+    color: #303030;
+    font-size: 1rem;
+    line-height: 24px;
+}
+.commentContent{
+    width: 75%;
+}
+.commentContent span{
+    color: #8B8B8B;
+    font-size: 1rem;
+    line-height: 24px;
+}
+
+.submitDiv span{
+}
+.submitDiv img{
+
+    margin-top: 10px;
+}
+.submitImg{
+    margin-top: 0rem;
+    margin-left: 25%;
+}
+
+/*审核要求 over*/
+
+
+.footButtonDiv {
+    background-color: #F0F0F0;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom:0;
+    right: 0;
+    /*padding :0.5rem 0;*/
+}
+
+.footButtonDiv button {
+    width: 100%;
+    height: 100%;
+    background-color: #f96301;
+    border: none;
+    /*border-radius: 4px;*/
+
+}
+:focus{
+    outline:0;
+}
+.footButtonDiv button span{
+    font-size: 1.3rem;
+    color:#FFFFFF;
+    letter-spacing: 3px;
+    font-weight: 200;
+}

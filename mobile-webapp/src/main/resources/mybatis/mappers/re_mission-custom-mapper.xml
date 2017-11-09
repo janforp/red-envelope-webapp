@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_mission">
+
+    <select id="getHotMission" resultMap="BaseResultMap">
+        SELECT  mission_id,mission_name,mission_img,mission_reward,participants_num,end_time
+        FROM    re_mission
+        WHERE   show_or_not = '1'
+        AND     mission_hot = '1'
+        ORDER   BY mission_order ASC
+    </select>
+
+    <select id="getMissionBySortId" resultMap="BaseResultMap" parameterType="int">
+        SELECT  mission_id,mission_name,mission_img,mission_reward,participants_num,end_time
+        FROM    re_mission
+        WHERE   show_or_not = '1'
+        AND     mission_sort = #{sortId,jdbcType=INTEGER}
+        ORDER   BY mission_order ASC
+    </select>
+
+    <select id="getMissionListBySortIdNum" resultType="int" parameterType="int">
+        SELECT  COUNT(mission_id)
+        FROM    re_mission
+        WHERE   show_or_not = '1'
+        AND     mission_sort = #{sortId,jdbcType=INTEGER}
+    </select>
+</mapper>

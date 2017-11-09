@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_rotate_detail">
+    <resultMap id="BaseResultMap" type="com.iask.red_envelope.model.ReRotateDetail">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="user_id" property="userId" jdbcType="INTEGER"/>
+        <result column="rotate_content" property="rotateContent" jdbcType="VARCHAR"/>
+        <result column="rotate_time" property="rotateTime" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="SELECT_All_Column">
+        SELECT id, user_id, rotate_content, rotate_time
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.iask.red_envelope.model.ReRotateDetail">
+        <include refid="re_rotate_detail.SELECT_All_Column"/>
+        FROM re_rotate_detail
+        WHERE id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="com.iask.red_envelope.model.ReRotateDetail">
+        DELETE FROM re_rotate_detail
+        WHERE id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.iask.red_envelope.model.ReRotateDetail">
+        INSERT INTO re_rotate_detail ( user_id, 
+          rotate_content, rotate_time )
+        VALUES ( #{userId,jdbcType=INTEGER}, 
+          #{rotateContent,jdbcType=VARCHAR}, #{rotateTime,jdbcType=VARCHAR} )
+        <selectKey keyProperty="id" resultType="long">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+    </insert>
+    <insert id="insertSelective" parameterType="com.iask.red_envelope.model.ReRotateDetail">
+        INSERT INTO re_rotate_detail
+        <trim prefix="(" suffixOverrides="," suffix=")">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="rotateContent != null">
+                rotate_content,
+            </if>
+            <if test="rotateTime != null">
+                rotate_time,
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffixOverrides="," suffix=")">
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="rotateContent != null">
+                #{rotateContent,jdbcType=VARCHAR},
+            </if>
+            <if test="rotateTime != null">
+                #{rotateTime,jdbcType=VARCHAR},
+            </if>
+        </trim>
+        <selectKey keyProperty="id" resultType="long">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+    </insert>
+    <insert id="insertBatch" parameterType="java.util.List">
+        INSERT INTO re_rotate_detail ( user_id, 
+          rotate_content, rotate_time )
+        VALUES
+        <foreach collection="list" item="item" index="index" separator="," >
+            (
+            #{item.userId,jdbcType=INTEGER}, 
+            #{item.rotateContent,jdbcType=VARCHAR}, #{item.rotateTime,jdbcType=VARCHAR}
+            )
+        </foreach>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.iask.red_envelope.model.ReRotateDetail">
+        UPDATE re_rotate_detail
+        <set>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="rotateContent != null">
+                rotate_content = #{rotateContent,jdbcType=VARCHAR},
+            </if>
+            <if test="rotateTime != null">
+                rotate_time = #{rotateTime,jdbcType=VARCHAR},
+            </if>
+        </set>
+        WHERE id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.iask.red_envelope.model.ReRotateDetail">
+        UPDATE re_rotate_detail
+        SET user_id = #{userId,jdbcType=INTEGER},
+            rotate_content = #{rotateContent,jdbcType=VARCHAR},
+            rotate_time = #{rotateTime,jdbcType=VARCHAR}
+        WHERE id = #{id,jdbcType=BIGINT}
+    </update>
+</mapper>

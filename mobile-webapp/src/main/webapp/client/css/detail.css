@@ -1,0 +1,192 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    font-size: 62.5%;
+    margin: 0;
+}
+:focus {
+    outline: none;
+}
+.content{
+    /*margin: 0 auto;*/
+    /*border: 1px solid white;*/
+    width: 100%;
+    max-width: 414px;
+    height: auto;
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.sign{
+    margin: 0rem auto;
+    border: 1px solid white;
+    max-width: 300rem;
+    height: 100px;
+    background-color: white;
+    text-align: center;
+}
+
+
+
+.sign div a{
+    position: relative;
+    top: 12px;
+    color: white;
+    font-size: large;
+}
+
+.ball{
+    margin: 0rem auto;
+    /*border: 1px solid white;*/
+    max-width: 300rem;
+    height: 100px;
+    background-color: white;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.ball li{
+    list-style-type: none;
+}
+
+.liDiv{
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 0rem 0.3rem 0rem 0.3rem ;
+    border:2px solid grey;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+
+}
+
+.rule{
+    margin: 1rem auto;
+    border: 0rem;
+    border-top: 1rem solid silver;
+    max-width: 300rem;
+    height: 300px;
+    background-color: lavender;
+    text-align: left;
+}
+.rule li{
+    list-style-type: none;
+    margin: 1rem 0 0 0;
+    font-size: 1rem;
+}
+
+
+
+/*底部悬浮栏*/
+.footer {
+    display: inline;
+    position: fixed;
+    width: 100%;
+    max-width: 414px;
+    height: 4rem;
+    padding: 1rem auto 1rem auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin:0 auto;
+    z-index: 100;
+    text-align: center;
+    background-color: #FEFEFE;
+    -moz-opacity: 0.9;
+    opacity: .90;
+    filter: alpha(opacity=90);
+}
+
+.aDiv{
+    margin: 0 auto;
+    position: relative;
+    width: 80px;
+    height: 3rem;
+    background-color: #FC702E;
+    top: 1px;
+    border-radius: 10px;
+    top:0.5rem;
+}
+
+.login{
+    margin: 0 auto;
+    position: relative;
+    width: 300px;
+    height: 3rem;
+    background-color: red;
+    top: 1px;
+    border-radius: 10px;
+    top:0.5rem;
+}
+
+
+a{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+/*手机端左右乱动*/
+html,body{overflow-x:hidden;}
+
+
+/*点击返回图片*/
+.back {
+    position: fixed;
+    bottom: 4rem;
+    right: 0;
+    text-align: right;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}
+.back img {
+    width: 50px;
+    height:50px;
+}
+
+
+
+/*商品详情部分start*/
+
+/*详情图片*/
+.detailImg img{
+    width: 100%;
+    height: auto;
+}
+/*图片下方的分隔部分*/
+.detailSep {
+    width: 100%;
+    height: 15px;
+    background-color: lightgray;
+    text-align: center;
+}
+/*具体描述*/
+.descDiv{
+    text-align: left;
+    margin: 1rem;
+}
+
+/*黑色标题*/
+.blackTitle{
+    display: block;
+    margin:1rem 0.5rem;
+    color: black;
+    font-size: 1.2rem;
+}
+/*每个标题下具体描述*/
+.descDetail{
+    display: block;
+    margin:0.2rem 0.5rem;
+    font-size: 0.8rem;
+    color: #7E7E7E;
+}
+/*商品详情部分end*/

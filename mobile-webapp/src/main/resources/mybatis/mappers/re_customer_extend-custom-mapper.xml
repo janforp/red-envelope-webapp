@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_customer_extend">
+
+    <resultMap id="RedMap" type="com.iask.red_envelope.model.vo.RedVo">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="customer_id" property="customerId" jdbcType="INTEGER"/>
+        <result column="red_num_total" property="redNumTotal" jdbcType="INTEGER"/>
+        <result column="red_num_left" property="redNumLeft" jdbcType="INTEGER"/>
+        <result column="red_num_day_total" property="redNumDayTotal" jdbcType="INTEGER"/>
+        <result column="red_num_day_left" property="redNumDayLeft" jdbcType="INTEGER"/>
+        <result column="customer_status" property="customerStatus" jdbcType="TINYINT"/>
+        <result column="customer_name" property="customerName" jdbcType="VARCHAR"/>
+        <result column="customer_img" property="customerImg" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="selectLockByCustomerId" resultMap="BaseResultMap" parameterType="INTEGER">
+        <include refid="re_customer_extend.SELECT_All_Column"/>
+        FROM re_customer_extend
+        WHERE customer_id = #{customerId,jdbcType=INTEGER}
+        AND customer_status = 1 FOR UPDATE
+    </select>
+
+    <select id="selectTop3RedList" resultMap="RedMap" parameterType="INTEGER">
+        SELECT a.id, a.customer_id, b.customer_name, b.customer_img
+        FROM re_customer_extend a
+        LEFT JOIN re_customer b ON b.customer_id = a.customer_id
+        WHERE a.customer_status = 1
+        AND a.customer_id != #{customerId,jdbcType=INTEGER}
+        ORDER BY a.red_num_day_left DESC
+        Limit 0, 3
+    </select>
+
+    <select id="selectRedList" resultMap="RedMap">
+        SELECT a.id, a.customer_id, a.red_num_day_total, a.red_num_day_left, a.customer_status, b.customer_name, b.customer_img
+        FROM re_customer_extend a
+        LEFT JOIN re_customer b ON b.customer_id = a.customer_id
+        WHERE a.customer_status = 1
+        ORDER BY a.is_hot DESC, a.red_num_day_left DESC
+    </select>
+
+    <select id="selectFinishRedList" resultMap="RedMap" parameterType="INTEGER" >
+        SELECT a.id, a.customer_id, a.red_num_total, a.customer_status, b.customer_name, b.customer_img
+        FROM re_customer_extend a
+        LEFT JOIN re_customer b ON b.customer_id = a.customer_id
+        WHERE a.customer_status = 0
+        AND a.id <![CDATA[ < ]]> #{id,jdbcType=INTEGER}
+        ORDER BY a.id DESC
+        LIMIT 0, 10
+    </select>
+
+    <select id="selectBanner" resultMap="BaseResultMap" parameterType="map">
+        SELECT customer_banner, customer_banner_url, red_num_day_left
+        FROM re_customer_extend
+        WHERE customer_id = #{customerId,jdbcType=INTEGER}
+        AND id = #{id,jdbcType=INTEGER}
+    </select>
+
+
+</mapper>

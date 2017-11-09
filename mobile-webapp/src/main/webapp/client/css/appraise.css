@@ -1,0 +1,70 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    font-size: 62.5%;
+}
+.content{
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 414px;
+}
+a {
+    text-decoration: none;
+}
+.oneMarket{
+    width: 100%;
+    padding:10px 0.5rem 10px 1rem;
+    height: 70px;
+    border-bottom: 3px solid #EFEFEF;
+    overflow: auto;
+}
+
+.iconDiv{
+    float: left;
+    width: 20%;
+    text-align: left;
+}
+.iconDiv img{
+    width: 50px;
+}
+
+.nameDiv{
+    float: left;
+    width:35%;
+    text-align: left;
+}
+.nameDiv span{
+    line-height: 50px;
+    font-size: 1rem;
+}
+
+.buttonDiv{
+    float: left;
+    width: 45%;
+    text-align: center;
+    padding:5px 10px;
+}
+.buttonDiv a {
+    display: block;
+    height: 40px;
+    background-color: red;
+    border-radius: 5px;
+}
+.buttonDiv span {
+    line-height: 40px;
+    font-size: 1.2rem;
+    color: white;
+    letter-spacing: 2px;
+}

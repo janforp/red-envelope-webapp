@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>招财猫</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="/plugins/jquery/jquery-1.9.1.min.js"></script>
+    <script>
+        var isIos = true;
+        if (navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('iPad') != -1 || navigator.userAgent.indexOf('iPod') != -1  ){
+            isIos = false;
+        }
+
+        /**
+         *
+         * @param downloadUrl   apk下载链接
+         * @param packageName   包名
+         * @param appName       app名
+         */
+        function download(downloadUrl,packageName,appName) {
+
+            if (navigator.userAgent.indexOf('hongbao') != -1){//非app上
+
+                window.location.href = downloadUrl;
+
+            }else{//app上
+                if(isIos){//苹果
+                    window.location.href='https://itunes.apple.com/hk/app/wifi-wan-neng-yao-shi-1.2yi/id919854496?l=zh&mt=8';
+                }else {//安卓
+                    //安装方法跳转到下载地址或者跳转到
+                    userSign.downloadAPK(appName,downloadUrl,1);
+                }
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+<div class="content" style="text-align: center"><!--content start-->
+    <img src="/client/img/codeDetail.png" style="width: 100%;margin-bottom: 5rem">
+    <a style="padding: 1rem;background-color: #00a2d4;border-radius: 4px;" href="javaScript:download('http://111.1.62.99/hotfiles/1215000003F03A3E/111.1.53.100/files/4215000003F03A3E/imtt.dd.qq.com/16891/45F81B0A5F9B9707F3E15CE9506F157B.apk','cat.parc.com.zcm','招财猫');">下载招财猫</a>
+</div><!--content over-->
+</body>
+</html>

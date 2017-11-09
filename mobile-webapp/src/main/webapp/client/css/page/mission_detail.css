@@ -1,0 +1,301 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    /*-moz-user-select: none;*/
+    /*-webkit-user-select: none;*/
+    /*-ms-user-select: none;*/
+    /*-khtml-user-select: none;*/
+    /*user-select: none;*/
+    font-size: 62.5%;
+}
+.content{
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 414px;
+    position: relative;
+}
+
+/*顶部图片,可能没有*/
+.headImg {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    /*padding-top: 1rem;*/
+}
+
+/*对图片宽高限制*/
+.headImg img {
+    width: 100%;
+    max-height: 120px;
+}
+/*顶部图片下方的标题*/
+.headTitle {
+    width: 100%;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    padding-left: 1rem;
+    text-align: left;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #EFEFEF;
+}
+
+/*商家,参与人数,状态*/
+.merchant {
+
+    font-size: 0.8rem;
+    width: 100%;
+    border-bottom: 1px solid #EFEFEF;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 40px;
+}
+.merchantLeft {
+
+    width:80% ;
+    float: left;
+}
+
+/*商家2字*/
+.mer {
+    color: red;
+    line-height: 40px;
+    font-size: 1rem;
+
+}
+.name {
+    font-size: 1rem;
+}
+/*参与人数背景色*/
+.numBack {
+    background-color: #EFEFEF;
+    padding: 0.2rem;
+    font-size: 1rem;
+}
+
+.merchantRight {
+    width:20% ;
+    float: left;
+    text-align: right;
+}
+
+.statusIng {
+    color: white;
+    line-height: 40px;
+    background-color:#02C751 ;
+    padding: 0.2rem;
+    font-size: 1rem;
+}
+
+.statusEd {
+    color: white;
+    line-height: 40px;
+    background-color:grey ;
+    padding: 0.2rem;
+    font-size: 1rem;
+}
+
+/*活动时间奖励,商家图片等*/
+.timeAndRewardImg{
+    width: 100%;
+    height: 150px;
+    padding: 0.8rem auto;
+    position: relative;
+    border-bottom: 1px solid #EFEFEF;
+
+}
+
+.timeRewardDiv{
+    padding-left: 1rem;
+    float: left;
+    width: 80%;
+    font-size: 0.9rem;
+
+}
+.timeRewardDiv span {
+    display: inline-block;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+.timeRewardDiv img {
+    width: 15px;
+    position: relative;
+    top:3px;
+}
+
+.imgDiv {
+    padding-right: 1rem;
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-top: 1.8rem;
+}
+.imgDiv img {
+
+    width: 70px;
+}
+.redColor {
+    color: red;
+}
+
+/*中间红色字体*/
+.descHeader{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    color: red;
+    font-size: 1rem;
+    border-bottom: 1px solid red;
+}
+
+.rule {
+
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid #EFEFEF;
+    overflow-x: hidden;
+}
+/*udeitor上传的图片可能很大*/
+.rule img {
+    max-width: 100%;
+}
+
+/*链接样式*/
+.class1 {
+    background-color: orange;
+    border-radius: 6px;
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+.class2 {
+    background-color: transparent;
+    border: orange 1px solid;
+    border-radius: 6px;
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    color: orange;
+}
+
+
+.right{
+
+    width: 100%;
+    /*height: 100px;*/
+    padding : 1rem;
+    background-color: #EFEFEF;
+    text-align: left;
+}
+
+.merDesc {
+
+    display: block;
+    background-color: blue;
+    padding: 0.5rem;
+    /*margin-bottom: 1rem;*/
+    width: 80px;
+    color: white;
+    font-size: 1rem;
+}
+
+.desc {
+    display: block;
+    background-color: #EFEFEF;
+    line-height: 20px;
+    font-size: 0.8rem;
+}
+
+
+/*底部固定部分,暂时咩有*/
+.empty {
+
+    height: 80px;
+}
+
+.foot {
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.5rem;
+
+    position: fixed;
+    bottom:0;
+}
+
+.foot span {
+    display: inline-block;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+.foot img {
+    width: 15px;
+    position: relative;
+    top:3px;
+}
+
+.footLeft {
+
+    width: 65%;
+    float: left;
+}
+
+.footRight {
+    width: 35%;
+    height: 30px;
+    float: left;
+
+    text-align: center;
+
+
+    position: absolute;
+    right: 0rem;
+}
+.footRight span {
+
+    line-height: 40px;
+    color: white;
+    font-size: 1rem;
+    background-color:#FBA79D ;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 5px;
+}
+
+
+
+/*所有权div*/
+.rightDiv {
+    background-color: #EFEFEF;width: 100%;height:auto;float: left;text-align: center;
+    color: grey;padding-bottom: 1rem;
+}
+.rightDiv span:nth-child(1) {
+    font-size: 0.8rem;display: block;margin-bottom: 0.4rem;padding-top: 1rem
+}
+.rightDiv span:nth-child(2) {
+    font-size: 0.8rem;display: block;margin-bottom: 0.4rem;
+}
+.rightDiv span:nth-child(3) {
+    font-size: 0.8rem;display: block;margin-bottom: 0.4rem;padding-bottom:1rem;
+}
+

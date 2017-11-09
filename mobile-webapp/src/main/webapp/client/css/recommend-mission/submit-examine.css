@@ -1,0 +1,171 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    font-size: 62.5%;
+}
+.content{
+    width: 100%;
+    margin:0 auto;
+    max-width: 414px;
+
+    height: 500px;
+}
+
+/*顶部 start*/
+.headDiv{
+    width: 100%;
+    padding: 1rem;
+    border-bottom:5px solid #EFEFEF;
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.leftDiv{
+    width: 20%;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.leftDiv span{
+    display: block;
+}
+.rightDiv{
+    width: 80%;
+    font-size:1.1rem;
+    color:#979797;
+    line-height: 23px;
+}
+/*顶部 over*/
+
+/*任务简介 start*/
+.title{
+    padding: 0.7rem 0.5rem;
+    border-bottom:2px solid #EFEFEF;
+    font-size: 0.8rem;
+    color: #949494;
+    display: flex;
+    justify-content: space-between;
+}
+.title span{
+    display: inline-block;
+}
+.descDiv{
+    padding: 0.7rem 0.5rem;
+    border-bottom: 5px solid #EFEFEF;
+}
+.descDiv span{
+    font-size: 0.9rem;
+    display: inline-block;
+    line-height: 20px;
+    color: #8B8B8B;
+}
+/*任务简介 over*/
+
+/*任务步骤 start*/
+.stepDiv{
+    padding: 0.7rem 0.5rem;
+    border-bottom:5px solid #EFEFEF;
+}
+.oneStepDiv{
+    display: flex;
+    justify-content: space-between;
+}
+.steps{
+    font-size: 0.9rem;
+    color: #8B8B8B;
+    width: 20%;
+}
+.stepContent{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.stepContent span{
+    display: block;
+    font-size: 0.9rem;
+    color: #8B8B8B;
+    line-height: 18px;
+}
+.stepImg{
+    margin: 0.1rem 0;
+}
+.stepContent img{
+    width: 60px;
+    height: 60px;
+    /*border:none;*/
+}
+/*任务步骤 over*/
+
+/*审核要求 start*/
+.submitDiv{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-bottom: 250px;
+}
+.submitDiv span{
+    font-size: 1.2rem;
+    color: #575757;
+}
+.submitDiv img{
+    width: 70px;
+    height: 70px;
+    margin: 0.5rem;
+}
+.submitImg{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+/*审核要求 over*/
+
+
+.footButtonDiv {
+    background-color: #F5F5F5;
+    width: 100%;
+    height: 200px;
+    position: fixed;
+    bottom:0;
+    right: 0;
+    padding :0.5rem;
+}
+
+.footButtonDiv button {
+    width: 100%;
+    height: 50px;
+    background-color: #f96301;
+    border: none;
+    border-radius: 4px;
+
+}
+.alertDiv{
+    padding:1rem;
+    font-size: 1rem;
+    line-height: 22px;
+    color:#979797;
+}
+:focus{
+    outline:0;
+}
+.footButtonDiv button span{
+    font-size: 1.3rem;
+    color:#FFFFFF;
+    letter-spacing: 3px;
+    font-weight: 200;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_loan_mall">
+    <select id="getListOrderByType" resultMap="BaseResultMap" parameterType="map">
+        <include refid="re_loan_mall.SELECT_All_Column"/>
+        FROM re_loan_mall
+        WHERE is_end = 1
+        <if test="orderType == 0">
+            ORDER BY order_money DESC,id desc
+        </if>
+        <if test="orderType == 1">
+            ORDER BY month_interest_rate ASC ,id desc
+        </if>
+        <if test="orderType == 2">
+            ORDER BY to_account_time ASC,id desc
+        </if>
+    </select>
+
+
+
+</mapper>

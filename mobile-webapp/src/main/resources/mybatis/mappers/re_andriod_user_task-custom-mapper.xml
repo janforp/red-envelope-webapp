@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_andriod_user_task">
+
+    <select id="selectOvertimeTask" resultMap="BaseResultMap" parameterType="String">
+        <include refid="re_andriod_user_task.SELECT_All_Column"/>
+        FROM re_andriod_user_task
+        WHERE task_status = 0
+        AND release_time <![CDATA[ <= ]]> #{nowTime,jdbcType=VARCHAR}
+    </select>
+
+
+</mapper>

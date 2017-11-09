@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    font-family:  "宋体",Calibri, Helvetica, Arial, sans-serif;
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.content{
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 414px;
+}
+
+/*顶部红色部分*/
+.headerDiv{
+    width: 100%;
+    text-align: center;
+    background-color: #f42a3b;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.headTitle {
+    display: block;
+    font-size: 1.7rem;
+    letter-spacing: 3px;
+    font-weight: 300;
+    color: #FEFFFF;
+    padding-bottom: 0.2rem;
+}
+
+.headDesc {
+
+    display: inline-block;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+    color: #FEFFFF;
+    padding-top: 0.5rem;
+}
+
+#totalMoney{
+
+    font-size: 1.5rem;
+    color: #FEFFFF;
+    letter-spacing: 3px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+/*每一条记录 所在的div*/
+.oneDetailDiv {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    overflow: auto;
+    border-bottom: 1px solid #EFEFEF;
+
+}
+
+.oneDetailDiv img {
+    width: 50px;
+    height: auto;
+    border-radius: 100%;
+}
+.left {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+.right {
+    float: left;
+    width: 75%;
+    text-align: left;
+}
+.name {
+    display: block;
+    padding-top: 0.5rem;
+    color: #606060;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+.time {
+    display: block;
+    padding-top: 0.2rem;
+    color: #606060;
+    letter-spacing: 1px;
+}
+
+
+
+.footButtonDiv {
+    background-color: #F0F0F0;
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    bottom:0;
+    right: 0;
+    padding :0.5rem;
+}
+
+.footButtonDiv button {
+    width: 100%;
+    height: 100%;
+    background-color: #FF4850;
+    border: none;
+    border-radius: 8px;
+
+}
+:focus{
+    outline:0;
+}
+.footButtonDiv button span{
+    font-size: 1.3rem;
+    color:#FFFFFF;
+    letter-spacing: 3px;
+    font-weight: 200;
+}

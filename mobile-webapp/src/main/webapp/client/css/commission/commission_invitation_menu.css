@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family:  "宋体",Calibri, Helvetica, Arial, sans-serif;
+    font-size: 62.5%;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+.content{
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 414px;
+}
+
+
+
+/*顶部红色部分*/
+.headerDiv{
+    width: 100%;
+    text-align: center;
+    background-color: #FFFFFF;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.headTitle {
+    display: block;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    font-weight: 400;
+    color: #FF4851;
+    padding-bottom: 0.2rem;
+}
+
+#totalMoney{
+    display: inline-block;
+    font-size: 2.5rem;
+    color: #FF4851;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.menuDiv {
+
+    width: 100%;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    overflow: auto;
+}
+
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.menu{
+    float: left;
+    width: 25%;
+    text-align: center;
+    border-right: 1px solid #EFEFEF;
+}
+.menu img {
+    width: 30px;
+    height: auto;
+}
+.menu span{
+
+    display: block;
+    margin-top: 5px;
+    color: #ADADAD;
+}
+
+.codeImg {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    position: relative;
+}
+.codeImg span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top:45%;
+    font-size: 2.5rem;
+    color: #292929;
+}
+
+.codeImg img {
+    width: 100%;
+}
+
+/*按钮上面的2句话*/
+.desc {
+    width: 100%;
+    padding: 1rem 2rem 0.2rem 2rem;
+    text-align: center;
+}
+
+.descText {
+    display: block;
+    color: #757575;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+.descText span {
+    color: #FF884B;
+}
+
+
+.footButtonDiv {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 65px;
+    padding :0.5rem 1.5rem;
+}
+
+.footButtonDiv button {
+    width: 100%;
+    height: 100%;
+    background-color: #FF4850;
+    border: none;
+    border-radius: 8px;
+}
+
+.footButtonDiv button span{
+    font-size: 1.3rem;
+    color:#FFFFFF;
+    letter-spacing: 2px;
+    font-weight: 200;
+}
+
+.ruleTitle{
+
+    width: 100%;
+    overflow: auto;
+    margin-top: 1.2rem;
+}
+
+.ruleTitleLeft {
+    float: left;
+    width: 37%;
+    text-align: center;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+}
+.ruleTitleMid {
+    float: left;
+    width: 26%;
+    text-align: center;
+
+}
+.ruleTitleMid span {
+    color:#787878;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+.ruleTitleRight {
+    float: left;
+    width: 37%;
+    text-align: center;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+}
+:focus{
+    outline:0;
+}
+hr{
+    border:1px solid #EDEDED;
+    border-top: none;
+}
+
+.ruleTextDiv {
+    padding: 1rem;
+}
+
+.ruleText {
+    display: block;
+    font-size: 0.9rem;
+    color: #B0B0B0;
+    margin-bottom: 1rem;
+    line-height: 1rem;
+}
+
+.backgroundImg {
+    
+    background-size: 100% 100%;
+    width: 100%;
+    height: 150px;
+    background-image: url("/client/img/commission/invitationCodeBackground.png");
+    text-align: center;
+}
+
+.backgroundImg span {
+
+    display: block;
+    width: 100%;
+    padding-top: 70px;
+    font-size: 2rem;
+    color: #292929;
+
+    -moz-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    -khtml-user-select: text;
+    user-select: text;
+
+}
+
+
+.fixFootButtonDiv {
+    background-color: #F0F0F0;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom:0;
+    right: 0;
+    display: none;
+}
+

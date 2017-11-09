@@ -1,0 +1,250 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    font-size: 62.5%;
+    background-color:white ;
+    height: auto;
+}
+.contentParent{
+    width: 100%;
+    height: auto;
+    max-width: 414px;
+    margin-left:0;
+    margin-right: 0;
+    position: relative;
+
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 414px;
+}
+
+.content{
+    height: auto;
+    /*背景色与tbody一致,否则有白色边框*/
+    background-color: #fa494b;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    /*position: relative;*/
+
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 414px;
+}
+/*
+    上榜规则及排行榜
+*/
+.rule{
+    width: 100%;
+    height: 50px;
+    /*背景色与tbody一致,否则有白色边框*/
+    background-color: #fa494b;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 414px;
+
+    /*固定在顶部*/
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*left: 0*/
+}
+
+.rule div:nth-child(1){
+
+    float: left;
+    width: 50%;
+    text-align: left;
+}
+.rule div:nth-child(2){
+
+    float: left;
+    width: 50%;
+    text-align: right;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+/*排行榜图片*/
+.rule img {
+    height: 80%;
+    width: 80%;
+    position: relative;
+    right: 0.5rem;
+    bottom: 0.2rem;
+}
+
+/*上榜规则*/
+.rule a{
+
+    color: white;
+    font-size: large;
+    padding-right: 1rem;
+
+    /*点击a标签时,效果不需要*/
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+/*前三名*/
+
+.top3{
+    width: 100%;
+    height: auto;
+    /*背景色与tbody一致,否则有白色边框*/
+    background-color: #fa494b;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 414px;
+}
+.top{
+    width: 100%;
+
+    height: 150px;
+    /*top固定在顶部,则下面的div需要有一个外边距*/
+    margin-top: 50px;
+}
+
+.topN {
+    float: left;
+    width: 33.3%;
+    /*为了让前三名感觉在正中间,靠右对齐感觉对点*/
+    text-align: center;
+}
+
+/*前三名头像*/
+.topN img{
+
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+}
+
+.topN span{
+    display: block;
+    margin: 0.5rem 0;
+    color: #ffeeee;
+    font-size: 1rem;
+}
+
+.top1 {
+
+    float: left;
+    width: 33.3%;
+    /*为了让前三名感觉在正中间,靠右对齐感觉对点*/
+    text-align: center;
+}
+
+.top1 span {
+    display: block;
+    margin: 0 0;
+    color: #FED33B;
+    font-size: 1rem;
+}
+
+.top1 img {
+
+    width: 90px;
+    height: 90px;
+    position: relative;
+    bottom: 20px;
+    border-radius: 100%;
+}
+.sep{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.separate{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    float:left;
+    background-color: #e0454a;
+    color: #fad512;
+    font-size: 1rem;
+}
+
+/*详情*/
+.detail {
+
+    width: 100%;
+    height: auto;
+    background-color: #fa494b;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 414px;
+}
+
+
+tbody{
+
+    background-color: #fe5459;
+    width: 100%;
+}
+
+.oneLine {
+
+    width: 90%;
+    margin-left: 5%;
+    height: 80px;
+    padding-bottom:10px ;
+    padding-top: 10px;
+    border-bottom: 1px solid #FAD411;
+}
+.oneLine span {
+    color:#FFEEEE;
+}
+
+/*头像*/
+.oneLine img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.icon {
+    float: left;
+    width: 20%;
+}
+.nickname {
+    float: left;
+    width: 25%;
+}
+.nickname span {
+    height: 60px;
+    line-height:60px;
+    font-size: 0.8rem;
+}
+.time{
+    float: left;
+    width: 35%;
+}
+.time span{
+    height: 60px;
+    line-height: 60px;
+    font-size: 0.7rem;
+}
+
+.price {
+    float: left;
+    width: 20%;
+}
+.price span{
+    height:60px;
+    line-height:60px;
+    font-size: 0.9rem;
+}
+

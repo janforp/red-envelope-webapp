@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_recommend_mission">
+
+    <select id="selectLockByMissionId" resultMap="BaseResultMap" parameterType="long">
+        <include refid="re_recommend_mission.SELECT_All_Column"/>
+        FROM re_recommend_mission
+        WHERE mission_id = #{missionId,jdbcType=BIGINT}
+        FOR UPDATE
+    </select>
+
+    <select id="selectByCode" resultMap="BaseResultMap" parameterType="String">
+        <include refid="re_recommend_mission.SELECT_All_Column"/>
+        FROM re_recommend_mission
+        WHERE mission_type = 1
+        AND exchange_code = #{exchangeCode,jdbcType=VARCHAR}
+    </select>
+
+
+</mapper>

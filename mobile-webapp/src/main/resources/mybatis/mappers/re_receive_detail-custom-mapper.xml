@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="re_receive_detail">
+
+    <select id="getAllDetailOrderByTimeAndStatus" resultMap="BaseResultMap" parameterType="map" >
+        <include refid="re_receive_detail.SELECT_All_Column"/>
+        FROM re_receive_detail
+        WHERE red_id = #{redId,jdbcType=INTEGER}
+        AND red_type = 0
+        AND instr(detail_time, #{today,jdbcType=VARCHAR})
+        ORDER BY detail_id ASC
+    </select>
+
+    <select id="getTotalNumByRedId" resultType="int" parameterType="map" >
+        SELECT COUNT(detail_id)
+        FROM re_receive_detail
+        WHERE red_id = #{redId,jdbcType=INTEGER}
+        AND red_type = 0
+        AND instr(detail_time, #{today,jdbcType=VARCHAR})
+    </select>
+
+    <select id="getTop3Detail" resultMap="BaseResultMap" parameterType="map" >
+        <include refid="re_receive_detail.SELECT_All_Column"/>
+        FROM re_receive_detail
+        WHERE red_id = #{redId,jdbcType=INTEGER}
+        AND red_type = 0
+        AND instr(detail_time, #{today,jdbcType=VARCHAR})
+        ORDER BY red_money DESC, detail_id ASC
+        LIMIT 3
+    </select>
+
+    <select id="getRedDetailByStatus" parameterType="map" resultMap="BaseResultMap">
+        <include refid="re_receive_detail.SELECT_All_Column"/>
+        FROM re_receive_detail
+        WHERE red_id = #{redId,jdbcType=INTEGER}
+        AND red_type = 0
+        AND instr(detail_time, #{today,jdbcType=VARCHAR})
+        <if test="status != null">
+            <choose>
+                <when test="status == 1">
+                    ORDER BY detail_time DESC
+                </when>
+                <when test="status == 0">
+                    ORDER BY detail_time ASC
+                </when>
+                <otherwise></otherwise>
+            </choose>
+        </if>
+        LIMIT 1
+    </select>
+
+    <select id="selectByCodeIdAndUserId" parameterType="map" resultMap="BaseResultMap">
+        <include refid="re_receive_detail.SELECT_All_Column"/>
+        FROM re_receive_detail
+        WHERE red_id = #{codeId,jdbcType=INTEGER}
+        AND red_type = 1
+        AND user_id = #{userId,jdbcType=INTEGER}
+        LIMIT 1
+    </select>
+
+    <select id="getDetailByUserIdOfNow" parameterType="map" resultMap="BaseResultMap">
+        <include refid="re_receive_detail.SELECT_All_Column"/>
+        FROM re_receive_detail
+        WHERE red_id = #{redId,jdbcType=INTEGER}
+        AND red_type = 0
+        AND user_id = #{userId,jdbcType=INTEGER}
+        AND instr(detail_time, #{today,jdbcType=VARCHAR})
+        LIMIT 1
+    </select>
+
+</mapper>

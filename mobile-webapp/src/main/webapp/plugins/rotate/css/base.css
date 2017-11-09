@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    font-size: 62.5%;
+    background-color: #F0F0F0;
+}
+
+ul, li, h1, h2, h3, h4, h5, h6, b, i {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.container {
+    width: 100%;
+    height: auto;/*改为100%背景图片才完全覆盖*/
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 414px;
+    /*position: relative;*/
+    /*text-align: center;*/
+    background-image: url(/plugins/rotate/img/bg.png);
+}
+
+.banner {
+    width: 100%;
+    position: relative;
+}
+
+.turntable {
+    width: 98%;
+    height: auto;
+    margin: 0% auto;
+    position: relative; /* border:1px solid green;*/
+    overflow: hidden;
+}
+
+.introduce {
+    margin: 1rem 1rem 0 1rem;
+    color: #EAC819;
+}
+
+.introduce h4 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.introduce p {
+    font-size: 1.0rem;
+}
+
+.rotate {
+    position: absolute;
+    margin-left: 7%;
+    margin-top: 6.5%;
+}
+
+.btn {
+    position: absolute;
+    top: 32%;
+    left: 35%;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.awards_cover {
+    display: none;
+}
+
+.awards_out {
+    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(19, 18, 18, 0.7);
+    max-width: 414px;
+    z-index: 99999;
+}
+
+.awards_in {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.awards_img {
+    position: absolute;
+    top: 45%;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.awards_name {
+    position: absolute;
+    bottom: 18%;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #E7431F;
+}
+
+.awards_btn {
+    position: absolute;
+    bottom: 6%;
+    width: 100%;
+    margin-left: 25%;
+}
+
+.awards_btn a {
+    display:inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 1.0rem;
+    line-height: 2.5rem;
+    width: 50%;
+    height: 2.5rem;
+    margin-top: 0.5rem;
+    background-color: #E7431F;
+    border-radius: 5px;
+}
+
+.fail_cover {
+    display: none;
+}
+
+.fail_out {
+    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(19, 18, 18, 0.7);
+    max-width: 414px;
+    z-index: 99999;
+}
+
+.fail_in {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.fail_btn {
+    position: absolute;
+    bottom: 20%;
+    width: 100%;
+    margin-left: 25%;
+}
+
+.fail_btn a {
+    display:inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 1.0rem;
+    line-height: 2.5rem;
+    width: 50%;
+    height: 2.5rem;
+    margin-top: 0.5rem;
+    background-color: #E7431F;
+    border-radius: 5px;
+}
